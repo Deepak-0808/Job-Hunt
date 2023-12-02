@@ -25,8 +25,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin:"http://localhost:3000",
-        // Credential:true,
+        origin:"https://job-hunt-xdxx.vercel.app",
+        Credential:true,
 
     })
 )
