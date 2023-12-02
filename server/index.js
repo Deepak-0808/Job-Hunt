@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin:"https://job-hunt-xdxx.vercel.app",
+        origin:"https://www.jobsmela.online",
         Credential:true,
 
     })
