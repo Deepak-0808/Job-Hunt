@@ -1,0 +1,14 @@
+@media screen and (max-width: 700px){
+    .contactFormMainContainer{
+        flex-direction: column;
+    }
+    .contactFormImgContainer{
+        display: flex;
+        align-self: center;
+    }
+    .contactFormInputContainer{
+        width: 100%;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+}

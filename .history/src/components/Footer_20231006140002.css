@@ -1,0 +1,149 @@
+#footerMainContainer{
+    width: 100vw;
+    color: white;
+    background-color: black;
+    margin-top: 0px;
+    position: b;
+    
+    
+}
+#footertemImg{
+    width: 100vw;
+}
+.footerSearchIcon{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+.footerSearchIcon h3{
+    margin-left: 20px;
+}
+.innerFooterContainer{
+    background-color: black;
+    padding: 45px;
+}
+.innerFooter2Container{
+    width: 100%;
+    display: flex;
+}
+.FooterLeftContainer{
+    width: 40%;
+   
+}
+.FooterLeftContainer h2{
+    font-size: xx-large;
+}
+.FooterRightContainer{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.footerHeading{
+    margin-bottom: 30px;
+    font-size: x-large;
+}
+.footerPara{
+    margin-bottom: 20px;
+}
+
+#subsEmailContainer{
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+#subscribeEmail::placeholder{
+    color: white;
+}
+#subsEmailContainer input{
+    border: 1px solid black;
+    background-color: black;
+    outline: none;
+    border: none;
+    color: white;
+}
+#subsEmailContainer button{
+    background-color: #4d4ddb;
+    border: 1px solid #4d4ddb;
+    color: white;
+    border-radius: 2px;
+    margin-left: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+/* @media screen and (max-width: 850px) { */
+@media screen and (min-width: 600px) and (max-width: 850px) {
+    .footerSearchIcon{
+        font-size: medium;
+        margin-bottom: 15px;
+    }
+    .footerSearchIcon h3{
+        margin-left: 7px;
+    }
+    .innerFooterContainer{
+        height: 300px;
+        padding: 30px;
+    }
+
+    .FooterLeftContainer h2{
+        font-size: large;
+    }
+    
+    .footerHeading{
+        margin-bottom: 30px;
+        margin-top: 10px;
+        font-size: medium;
+    }
+    .footerPara{
+        margin-bottom: 13px;
+    }
+    #subsEmailContainer{
+         padding: 0.6vw;
+    }
+    
+    #subsEmailContainer input{
+        width: 12vw;    
+    }
+    #subsEmailContainer button{
+        border-radius: 2px;
+        margin-left: 2px;
+        padding: 1px;   
+    }
+}
+
+
+@media screen and (max-width: 420px){
+    .footerSearchIcon{
+        font-size: small;
+        margin-bottom: 8px;
+    }
+    .footerSearchIcon h3{
+        margin-left: 5px;
+        font-size: large;
+    }
+    .innerFooterContainer{
+        height: 200px;
+        padding: 10px;
+    }
+
+    .FooterLeftContainer h2{
+        font-size: medium;
+    }
+    
+    .footerHeading{
+        margin-bottom: 10px;
+        margin-top: 5px;
+        font-size: large;
+    }
+    .footerPara{
+        margin-bottom: 5px;
+    }
+    #emailMainContainer{
+        display: none;
+    }
+    #find{
+        display: none;
+    }
+}

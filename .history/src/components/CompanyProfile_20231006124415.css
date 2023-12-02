@@ -1,0 +1,86 @@
+#mainContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: #e6e6f9;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+}
+#innerContainer{
+    width: 90%;
+    display: flex;
+}
+#companyLeftContainer{
+    width: 70%;
+    margin-right: 2vw;
+    background-color: white;
+    border-radius: 0.8vw;
+    padding: 3%;
+
+}
+
+#companyIcon{
+    width: 8vw;
+}
+
+.flexBox{
+    display: flex;
+}
+.line{
+    height: 0.1vw;
+    background-color: rgb(97, 94, 94);
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+}
+.companyAllTitle{
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin-bottom: 0.5vw;
+}
+.lI-LN{
+    display: flex;
+    align-items: center;
+}
+.iconSize{
+    width: 1.5vw;
+    margin-right: 0.7vw;
+}
+.companyPara{
+    font-size: 1.5vw;
+}
+
+
+
+#companyRightContainer{
+    width: 30%;
+    height: fit-content;
+    
+    
+}
+#companyRightUpperContainer{
+    background-color: white;
+    padding: 3%;
+    border-radius: 0.8vw;
+}
+.rightSideMarginClass{
+    margin-bottom: 1.5vw;
+}
+.rightCompanyPara{
+    font-size: 1.3vw;
+}
+.rightMargin{
+    margin-right: 0.5vw;
+}
+
+
+
+#companyRightLowerContainer{
+    background-color: white;
+    padding: 3%;
+    border-radius: 0.6vw;
+    margin-top: 2vw;
+}
+.socialMedia{
+    align-items: center;
+    
+}

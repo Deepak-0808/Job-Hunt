@@ -1,0 +1,90 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+section{
+    width: 100vw;
+}
+
+#candiMainContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #e6e6f9;
+    
+    padding-bottom: 3vw;
+}
+#candiInnerContainer{
+    width: 90%;
+}
+.flexClass{
+    display: flex;
+    justify-content: space-between;
+}
+.CandiIconSize{
+    width: 10vw;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16vw;
+    height: 18vw;
+    margin-bottom: 3vw;
+    padding: 2vw;
+    background-color: white;
+}
+.CandiName{
+    font-size: 2vw;
+    color: black;
+    margin-top: 1.5vw;
+    margin-bottom: 0.6vw;
+}
+.CandiProfile{
+    font-size: 1.3vw;
+}
+
+
+
+
+
+
+
+
+
+
+#moveMainContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: #e6e6f9;
+    padding-bottom: 2vw;
+}
+#moveInnerContainer{
+    width: 40vw; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    border: 0.1vw solid #b2b2eb;
+    border-radius: 50%;
+    height: 1.5vw;
+    width: 1.5vw;
+    padding: 0.5vw;
+    margin: 0.5vw; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 2vw;
+    
+}
+.moveIcon{
+    height: 1.5vw;
+    cursor: pointer;
+}
+#page1{
+    background-color: #3939d6;
+    color: white;
+    border: #3939d6;
+}

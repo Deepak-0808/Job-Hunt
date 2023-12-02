@@ -1,0 +1,201 @@
+#footerMainContainer{
+    width: 100vw;
+    color: white;
+    background-color: black;     
+}
+#footerItemImg{
+    width: 100vw;
+}
+.footerSearchIcon{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    margin-bottom: 2vw;
+}
+.footerSearchIcon h3{
+    margin-left: 1vw;
+}
+.innerFooterContainer{
+    background-color: black;
+    padding: 3vw;
+}
+.innerFooter2Container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.FooterLeftContainer h2{
+    font-size: xx-large;
+}
+
+.footerHeading{
+    margin-bottom: 2vw;
+    font-size: x-large;
+}
+.footerPara{
+    margin-bottom: 1.5vw;
+}
+
+#footerSubsEmailContainer{
+    border: 1px solid white;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    width: fit-content;
+    
+}
+#footerSubsEmailContainer input::placeholder{
+    color: white;
+    
+}
+#footerSubsEmailContainer input{
+    border: 1px solid black;
+    background-color: black;
+    outline: none;
+    border: none;
+    color: white;
+    width: fit-content;
+    
+}
+#footerSubsEmailContainer button{
+    background-color: #4d4ddb;
+    border: 1px solid #4d4ddb;
+    color: white;
+    border-radius: 0.3vw;
+    margin-left: 0.5vw;
+    padding: 0.1vw;
+    cursor: pointer;
+}
+
+
+/* @media screen and (max-width: 850px) { */
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    #footerMainContainer{
+        width: 100vw;
+        color: white;
+        background-color: black; 
+        
+    }
+    #footerItemImg{
+        width: 100vw;
+    }
+    .footerSearchIcon{
+        display: flex;
+        align-items: center;
+        font-size: large;
+        margin-bottom: 1.5vw;
+    }
+    .footerSearchIcon h3{
+        margin-left: 0.7vw;
+    }
+    .innerFooterContainer{
+        background-color: black;
+        padding: 3vw;
+    }
+    .innerFooter2Container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .FooterLeftContainer h2{
+        font-size: large;
+    }
+    .footerHeading{
+        margin-bottom: 1.5vw;
+        font-size: large;
+    }
+    .footerPara{
+        margin-bottom: 1vw;
+    }
+    
+    #footerSubsEmailContainer{
+        border: 1px solid white;
+        padding: 0.5vw;
+        border-radius: 0.5vw;
+        width: fit-content;
+        
+    }
+    #footerSubsEmailContainer input::placeholder{
+        color: white;
+        
+    }
+    #footerSubsEmailContainer input{
+        border: 1px solid black;
+        background-color: black;
+        outline: none;
+        border: none;
+        color: white;
+        width: 5vw;
+        font-size: medium;
+        
+    }
+    #footerSubsEmailContainer button{
+        background-color: #4d4ddb;
+        border: 1px solid #4d4ddb;
+        color: white;
+        border-radius: 0.3vw;
+        margin-left: 0.5vw;
+        padding: 0.1vw;
+        cursor: pointer;
+        font-size: medium;
+    }
+    
+}
+
+
+@media screen and (max-width: 500px){
+    #footerMainContainer{
+        width: 100vw;
+        color: white;
+        background-color: black; 
+        
+    }
+    #footerItemImg{
+        width: 100vw;
+    }
+    .footerSearchIcon{
+        display: flex;
+        align-items: center;
+        font-size: small;
+        margin-bottom: 1vw;
+    }
+    #footerIcon{
+        width: 8vw;
+    }
+    .footerSearchIcon h3{
+        margin-left: 0.5vw;
+        font-size: small;
+    }
+    .innerFooterContainer{
+        background-color: black;
+        padding: 3vw;
+    }
+    .innerFooter2Container{
+        width: 100%;
+        display: flex;
+    }
+    .FooterLeftContainer{
+        width: 50%;
+       
+    }
+    .FooterLeftContainer h2{
+        font-size: medium;
+    }
+    
+    .footerHeading{
+        margin-bottom: 1.5vw;
+        font-size: medium;
+    }
+    .footerPara{
+        margin-bottom: 0.5vw;
+        font-size: small;
+    }
+    
+    #footerEmailMainContainer{
+        display: none;
+    }
+    
+    
+}

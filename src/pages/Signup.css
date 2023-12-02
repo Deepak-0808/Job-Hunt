@@ -1,0 +1,171 @@
+#signUpMainContainer{
+    display: flex;
+    width: 100vw;
+    /* height: calc(100vh - 100px); */
+    height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    
+        
+}
+
+#leftContainer{
+    background-color: #CCCCF5;
+    width: 50%;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sideImage{
+    width: 85%;
+    height: 100%;
+}
+
+#rightContainer{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+ }
+
+#rightContainerInnerbox{
+    width: 65%;
+    height: auto;
+    padding: 8px;
+    font-size: 18px;  
+
+}
+#policySignup{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;  
+}
+#checkboxSignup{
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;   
+}
+
+
+  .signupInput{
+    /* display: block; */
+    padding: 14px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid blue;
+    outline: none;
+    
+  }
+#signupBtn{
+    width: 100%;
+    padding: 11px;
+    margin-top: 35px;
+    font-size: 20px;
+    color: white;
+    background: black;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+}
+#innerfooterSignup{
+    display: flex;
+    margin-right: 20px;
+    justify-content: center;
+    margin-top: 1.5vw;
+
+}
+#login{
+  margin-left: 1vw;
+  cursor: pointer;
+  color: blue;
+}
+.navlinkSignin{
+  text-decoration: none;
+}
+
+
+
+
+
+@media screen and (max-width: 450px) {
+    #leftContainer{
+        display: none;
+    }
+    #rightContainer{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #rightContainerInnerbox{
+        width: 65%;
+        height: auto;
+        padding: 8px;
+        font-size: 15px;    
+    }
+
+  .signupInput{
+    display: block;
+    padding: 9px;
+    width: 89%;
+    margin-bottom: 18px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid blue;
+    outline: none;
+    
+  }
+  #checkbox{
+    width: 15px;
+    height: 15px;
+    margin-right: 13px;
+    cursor: pointer;   
+  }
+  .footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    justify-content: space-between;
+    text-decoration: none;
+    
+  }
+  #innerfooter{
+    margin-bottom: 10px;
+  }
+  #login{
+    margin-left: 5px;
+  }
+  .footer a{
+    text-decoration: none;
+  }
+
+
+}
+
+@media screen and (min-width: 750px) and (max-width: 900px) {
+    #footer{
+        display: block;
+        
+    }
+    #login{
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }
+    
+}

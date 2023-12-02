@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#navbar{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  background-color: bisque;
+
+}
+#navbar li{
+  margin-right: 20px;
+}
+
+#footerHome{
+  m
+}

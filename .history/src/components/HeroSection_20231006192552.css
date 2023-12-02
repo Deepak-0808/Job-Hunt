@@ -1,0 +1,123 @@
+/* herosection */
+
+#section1{
+    position: relative;
+}
+#heroSectionImg{
+    width: 100%;
+    position: relative;
+    
+}
+#heroimg{
+    height: 500px;
+    width: 100%;
+}
+#innerHeroSection{
+    width: 40%;
+    padding: 50px;
+    color: white;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    
+}
+.jobListed{
+    font-size: x-large;
+    margin-top: 20px;
+}
+#jobListedH3{
+    font-size: 40px;
+}
+#dreamJob{
+    font-size: 50px;
+}
+#innerHeroSectionBtn{
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: x-large;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-top: 50px;
+    cursor: pointer;
+    
+}
+
+
+
+@media screen and (min-width: 600px) and (max-width: 850px) {
+    #heroimg{
+        height: 400px;
+        width: 100%;
+        background-color: #3939d6;
+    }
+    #innerHeroSection{
+        width: 50%;
+        height: 55%;
+        padding: 30px;
+        color: white;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .jobListed{
+        font-size: x-large;
+        margin-top: 10px;
+    }
+    #jobListedH3{
+        font-size: 30px;
+    }
+    #dreamJob{
+        font-size: 40px;
+    }
+    #innerHeroSectionBtn{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: medium;
+    margin-top: 30px;
+}
+}
+
+@media screen and (max-width: 420px){
+    #heroimg{
+        height: 300px;
+        width: 100%;
+        background-color: #3939d6;
+    }
+    #innerHeroSection{
+        width: 60%;
+        height: 60%;
+        padding: 10px;
+        color: white;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    .jobListed{
+        font-size: small;
+        margin-top: 10px;
+    }
+    #jobListedH3{
+        margin-top: 0px;
+        font-size: large;
+    }
+    #dreamJob{
+        font-size: 22px;
+    }
+    #innerHeroSectionBtn{
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: small;
+    margin-top: 20px;
+    border-radius: 3px;
+    
+    }
+
+}

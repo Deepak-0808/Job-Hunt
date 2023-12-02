@@ -1,0 +1,153 @@
+#navMain{
+  position: fixed;
+  z-index: 2;
+}
+#navBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3939d6;
+  height: 100px;
+  font-size: x-large;
+  color: white;
+  width: 100vw;
+  position: a;
+  
+}
+#navLeft{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.navLeftClass{
+  margin-left: 30px;
+}
+#navCenter{
+  display: flex;
+  list-style: none;
+
+}
+#navCenter li {
+  margin-right: 30px;
+  padding: 0px;
+  color: white;
+}
+.navlinkColor{
+  color: white;
+  text-decoration: none;
+}
+#navRightSide{
+  display: block;
+  margin-right: 20px;
+}
+.navRightSideClass{
+  margin-right: 30px;
+  color: white;
+  text-decoration: none;
+
+}
+#navRightBtn{
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: x-large;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 850px) {
+  #navBar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      font-size: small;
+      color: white;
+      
+  }
+  #navRightBtn{
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: medium;
+  }
+  #navLeft{
+      margin-left: 10px;
+  }
+  .navLeftClass{
+      margin-left: 10px;
+      font-size: large;
+  }
+  #navCenter li {
+      margin-right: 15px;
+      padding: 0px; 
+      color: white;  
+  }
+  #navRightSide{
+      margin-right: 10px;
+      color: white;
+  }
+  .navRightSideClass{
+      margin-right: 10px;
+      color: white;
+      text-decoration: none;
+  
+  }
+
+
+}
+
+@media screen and (max-width: 420px){
+  #home{
+      display: none;
+  }
+  #navBar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      font-size: xx-small;
+      
+  }
+  #searchIcon{
+      width: 25px;
+  }
+  #jobSearch{
+      font-size: x-small;
+  }
+  #navRightBtn{
+      padding-left: 6px;
+      padding-right: 6px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border-radius: 3px;
+      font-size: x-small;
+  }
+  #navLeft{
+      margin-left: 5px;
+  }
+  .navLeftClass{
+      margin-left: 5px;
+      font-size: small;
+  }
+  #navCenter li {
+      margin-right: 7px;
+      padding: 0px; 
+  }
+  #navRightSide{
+      margin-right: 5px;
+      display: flex;
+      align-items: center;
+  }
+  .navRightSideClass{
+      margin-right: 5px;
+      text-decoration: none;
+  
+  }
+}
