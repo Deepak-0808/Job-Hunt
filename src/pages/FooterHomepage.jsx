@@ -1,13 +1,12 @@
 import React from 'react'
 import './Footer.css';
 import footerTemplet from "../Img/homepage/footerTemplet.png";
-import searchIcon from "../Img/homepage/searchIcon.svg";
 import {
     fetchJobCategories
   } from "../services/operations/jobDetailsAPI"
 import { useState } from 'react';  
 import { useEffect } from 'react';
-import logo6 from "../Img/Logo/logo6.png"
+import logo from "../Img/jobsmelaLogo/png/mainLogo.png"
 
 const FooterHomepage = () => {
 
@@ -38,8 +37,7 @@ const FooterHomepage = () => {
                 <div className="innerFooter2Container">
                     <div className="FooterLeftContainer">
                         <div className="footerSearchIcon">
-                            <img id="footerIcon" className='logoSize' src={logo6} alt="Search Icon" />
-                            <h3 className='footerJobSearch'>Job Hunt</h3>
+                            <img id="footerIcon" className='logoSize' src={logo} alt="Search Icon" />
                         </div>
                         <h2 id="Footerfind" className="footerPara ">Find Your Dream Job</h2>
                         <p className="footerPara">Deepak Kumar</p>

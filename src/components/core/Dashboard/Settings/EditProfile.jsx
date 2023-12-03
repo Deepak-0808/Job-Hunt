@@ -31,12 +31,12 @@ export default function EditProfile() {
     <>
       <form onSubmit={handleSubmit(submitProfileForm)}>
         {/* Profile Information */}
-        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-black bg-white p-8 px-12">
-          <h2 className="text-lg font-semibold text-black">
+        <div className="my-[3vw] flex flex-col gap-y-6 rounded-md border-[1px] border-black bg-white p-[2vw]">
+          <h2 className="text-[4vw] font-semibold text-black max-text-size-my-profile">
             Profile Information
           </h2>
-          <div className="flex flex-col gap-5 lg:flex-row">
-            <div className="flex flex-col gap-2 lg:w-[48%]">
+          <div className="flex flex-col gap-5 lg:flex-row ">
+            <div className="flex flex-col gap-2 lg:w-[48%] ">
               <label htmlFor="firstName" className="lable-style">
                 Full Name
               </label>
@@ -45,12 +45,12 @@ export default function EditProfile() {
                 name="fullName"
                 id="fullName"
                 placeholder="Enter full name"
-                className="form-style"
+                className="form-style-profile form-style " 
                 {...register("fullName", { required: true })}
                 defaultValue={user?.fullName}
               />
               {errors.fullName && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[2vw] text-yellow-100">
                   Please enter your full name.
                 </span>
               )}
@@ -63,7 +63,7 @@ export default function EditProfile() {
                 type="date"
                 name="dateOfBirth"
                 id="dateOfBirth"
-                className="form-style"
+                className="form-style-profile form-style"
                 {...register("dateOfBirth", {
                   required: {
                     value: true,
@@ -77,7 +77,7 @@ export default function EditProfile() {
                 defaultValue={user?.additionalDetails?.dateOfBirth}
               />
               {errors.dateOfBirth && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[2vw] text-yellow-100">
                   {errors.dateOfBirth.message}
                 </span>
               )}
@@ -94,7 +94,7 @@ export default function EditProfile() {
                 name="contactNumber"
                 id="contactNumber"
                 placeholder="Enter Contact Number"
-                className="form-style"
+                className="form-style-profile form-style"
                 {...register("contactNumber", {
                   required: {
                     value: true,
@@ -106,7 +106,7 @@ export default function EditProfile() {
                 defaultValue={user?.additionalDetails?.contactNumber}
               />
               {errors.contactNumber && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[2vw] text-yellow-100">
                   {errors.contactNumber.message}
                 </span>
               )}
@@ -119,7 +119,7 @@ export default function EditProfile() {
                 type="text"
                 name="gender"
                 id="gender"
-                className="form-style"
+                className="form-style-profile form-style"
                 {...register("gender", { required: true })}
                 defaultValue={user?.additionalDetails?.gender}
               >
@@ -132,7 +132,7 @@ export default function EditProfile() {
                 })}
               </select>
               {errors.gender && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[2vw] text-yellow-100">
                   Please enter your gender
                 </span>
               )}
@@ -140,7 +140,6 @@ export default function EditProfile() {
           </div>
 
           <div className="flex flex-col gap-5 lg:flex-row">
-            
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="about" className="lable-style">
                 About
@@ -150,12 +149,12 @@ export default function EditProfile() {
                 name="about"
                 id="about"
                 placeholder="Enter Bio Details"
-                className="form-style"
+                className="form-style-profile form-style"
                 {...register("about", { required: true })}
                 defaultValue={user?.additionalDetails?.about}
               />
               {errors.about && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[2vw] text-yellow-100">
                   Please enter your self.
                 </span>
               )}
@@ -168,7 +167,7 @@ export default function EditProfile() {
             onClick={() => {
               navigate("/dashboard/my-profile")
             }}
-            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+            className="cursor-pointer rounded-md bg-richblack-700 py-[1vw] px-[2vw] font-semibold text-[2vw] text-richblack-50 max-text-size-my-profile"
           >
             Cancel
           </button>

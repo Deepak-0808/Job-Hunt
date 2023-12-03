@@ -1,7 +1,7 @@
 import * as Icons from "react-icons/vsc"
 import { useDispatch } from "react-redux"
 import { NavLink, matchPath, useLocation } from "react-router-dom"
-
+import './SidebarLink.css'
 import { resetJobState } from "../../../slices/jobSlice"
 
 export default function SidebarLink({ link, iconName }) {
@@ -17,9 +17,9 @@ export default function SidebarLink({ link, iconName }) {
     <NavLink
       to={link.path}
       onClick={() => dispatch(resetJobState())}
-      className={`relative px-8 py-2 text-sm font-medium ${
+      className={`relative px-[2vw] py-[1.1vw] text-[2vw] max-text-size font-medium ${
         matchRoute(link.path)
-          ? " bg-blueMain text-white"
+          ? "bg-blueMain text-white"
           : "bg-opacity-0 text-black"
       } transition-all duration-200`}
     >
@@ -30,7 +30,7 @@ export default function SidebarLink({ link, iconName }) {
       ></span>
       <div className="flex items-center gap-x-2">
         {/* Icon Goes Here */}
-        <Icon className="text-lg" />
+        <Icon className="text-[2vw] max-text-size" />
         <span>{link.name}</span>
       </div>
     </NavLink>

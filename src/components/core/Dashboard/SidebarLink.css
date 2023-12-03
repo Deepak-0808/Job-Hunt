@@ -1,0 +1,28 @@
+
+@media (min-width: 900px) {
+    .max-text-size {
+      font-size: 1rem;
+      
+    }
+    .max-text-size-my-profile{
+        font-size: 110%;
+       
+    }
+    .form-style {
+      display: block;
+        padding: 14px;
+        color: black;
+        outline: none;
+        border: 1px solid blue;
+        border-radius: 4px;
+      }
+    
+    
+  }
+
+  /* .lable-style{
+    font-size: 3vw;
+} */
+
+
+  

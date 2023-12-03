@@ -59,16 +59,16 @@ export default function ChangeProfilePicture() {
   }, [imageFile])
   return (
     <>
-      <div className="flex items-center justify-between rounded-md border-[1px] border-black bg-white p-8 px-12 text-black">
-        <div className="flex items-center gap-x-4">
+      <div className="flex items-center justify-between rounded-md border-[1px] border-black bg-white p-[2vw]  text-black">
+        <div className="flex items-center gap-x-[2vw] ">
           <img
             src={previewSource || user?.image}
             alt={`profile-${user?.firstName}`}
-            className="aspect-square w-[78px] border border-blue-500 rounded-full object-cover"
+            className="aspect-square w-[7vw] border border-blue-500 rounded-full object-cover max-text-size-my-profile "
           />
-          <div className="space-y-2">
-            <p>Change Profile Picture</p>
-            <div className="flex flex-row gap-3">
+          <div className="space-y-[1vw] ">
+            <p className="text-[3vw] max-text-size-my-profile">Change Profile Picture</p>
+            <div className="flex flex-row gap-[2vw] ">
               <input
                 type="file"
                 ref={fileInputRef}
@@ -79,7 +79,7 @@ export default function ChangeProfilePicture() {
               <button
                 onClick={handleClick}
                 disabled={loading}
-                className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+                className="cursor-pointer rounded-md bg-richblack-700 py-[1vw] px-[2vw] font-semibold text-[2vw] text-richblack-50 max-text-size-my-profile"
               >
                 Select
               </button>
@@ -88,7 +88,7 @@ export default function ChangeProfilePicture() {
                 onclick={handleFileUpload}
               >
                 {!loading && (
-                  <FiUpload className="text-lg text-richblack-900" />
+                  <FiUpload className="text-[2vw] text-richblack-900 max-text-size-my-profile" />
                 )}
               </IconBtn>
             </div>

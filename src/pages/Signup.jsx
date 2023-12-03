@@ -93,7 +93,7 @@ const Signup = () => {
             </div>
             <div id='rightContainer'>
                 <div id='rightContainerInnerbox'>
-                    <h2><center className=' font-bold text-2xl mb-12'>Welcome To Job Search</center></h2>
+                    <h2><center className=' font-bold text-2xl mb-12'>Welcome To Jobs Mela</center></h2>
                     {/* <Tab tabData={tabData} field={accountType} setField={setAccountType} /> */}
                     <form onSubmit={handleOnSubmit} action="" id='form'>
                         

@@ -19,24 +19,24 @@ export default function DeleteAccount() {
 
   return (
     <>
-      <div className="my-10 flex flex-row gap-x-5 rounded-md border-[1px] border-pink-700 bg-pink-900 p-8 px-12">
-        <div className="flex aspect-square h-14 w-14 items-center justify-center rounded-full bg-pink-700">
-          <FiTrash2 className="text-3xl text-pink-200" />
+      <div className="my-[4vw] flex flex-row gap-x-[2vw] rounded-md border-[1px] border-pink-700 bg-pink-900 p-[2vw]">
+        <div className="flex aspect-square h-[4vw] w-[4vw] items-center justify-center rounded-full bg-pink-700">
+          <FiTrash2 className="text-[2vw] text-pink-200 max-text-size-my-profile" />
         </div>
-        <div className="flex flex-col space-y-2">
-          <h2 className="text-lg font-bold text-richblack-5">
+        <div className="flex flex-col space-y-[1vw]">
+          <h2 className="text-[4vw] font-bold text-richblack-5 max-text-size-my-profile">
             Delete Account
           </h2>
-          <div className="w-3/5 text-pink-25">
-            <p>Would you like to delete account?</p>
-            <p>
+          <div className="w-fit  text-pink-25">
+            <p className="text-[3vw] max-text-size-my-profile">Would you like to delete account?</p>
+            <p className="text-[2vw] max-text-size-my-profile">
               This account may contain important data. Deleting your account is
               permanent and will remove all the contain associated with it.
             </p>
           </div>
           <button
             type="button"
-            className="w-fit cursor-pointer italic text-pink-300"
+            className="w-fit text-[4vw] cursor-pointer italic text-pink-300 max-text-size-my-profile"
             onClick={handleDeleteAccount}
           >
             I want to delete my account.

@@ -404,7 +404,7 @@ export default function CourseInformationForm() {
         <div className="relative">
           <input
             id="salary"
-            type="number"
+            type="string"
             placeholder="Enter Job Salary"
             {...register("salary",{
               required: true,

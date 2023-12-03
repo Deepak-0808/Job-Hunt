@@ -12,3 +12,18 @@
         padding-right: 3vw;
     }
 }
+
+
+@media screen and (max-width: 500px){
+    .temp1ContactUs{
+        height: 200px;
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 900px){
+    .temp1ContactUs{
+        height: 300px;
+        width: 100vw;
+    }
+}

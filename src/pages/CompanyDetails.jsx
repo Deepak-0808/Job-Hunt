@@ -73,7 +73,7 @@ const CompanyDetails = ({ companyData,jobData, onClose }) => {
                                 <div className='flexBox rightSideMarginClass rightCompanyPara'>
                                     <img className='iconSizeCompanies' src={blackCircle} alt="" />
                                     <div className='rightMargin'>Website URL:</div>
-                                    <div>{companyData.companyUrl}</div>
+                                    <div className=' overflow-scroll'>{companyData.companyUrl}</div>
                                 </div>
                             </div> 
                             <div className='companyRightLowerContainer'>

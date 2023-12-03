@@ -30,7 +30,7 @@ const jobDetailSchema = new mongoose.Schema({
         type: Number
     },
     salary: {
-        type: Number
+        type: String
     },
     tag: {
 		type: [String],

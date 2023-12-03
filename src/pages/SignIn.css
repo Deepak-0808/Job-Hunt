@@ -11,26 +11,27 @@
 #leftContainerSignIn{
     background-color: #CCCCF5;
     width: 50%;
-    height: auto;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 
 #sideImage{
-    width: 85%;
+    width: 100%;
     height: 100%;
 }
 
 #rightContainerSignIn{
     width: 50%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 0px;
 
  }
 
@@ -104,7 +105,7 @@
 
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     #leftContainerSignIn{
         display: none;
     }

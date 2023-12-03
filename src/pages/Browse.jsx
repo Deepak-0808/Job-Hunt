@@ -184,7 +184,7 @@ const Browse = () => {
         <div>
           <section id="section1">
             <div id="heroSectionImg">
-              <img className=" h-[300px] w-full" src={templet1} alt="loading" />
+              <img className="temp1ContactUs" src={templet1} alt="loading" />
               <div id="innerHeroSection">
                 <h3 id="jobListedH3" className="jobListed">
                   7457+ Job Listed
@@ -340,9 +340,10 @@ const Browse = () => {
         </div>
       )}
 
-    <Footer/>
 
+        <Footer/>
     </div>
+
   );
 };
 

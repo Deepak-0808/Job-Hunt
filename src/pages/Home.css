@@ -16,7 +16,7 @@
 }
 #heroimg{
     height: 500px;
-    width: 100%;
+    width: 100vw;
 }
 #innerHeroSection{
     width: 40%;
@@ -120,8 +120,8 @@
         height: auto;
     }
     #heroimg{
-        height: 300px;
-        width: 100%;
+        height: 250px;
+        width: 100vw;
     }
     #innerHeroSection{
         width: 50%;

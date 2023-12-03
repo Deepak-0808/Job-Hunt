@@ -1,7 +1,8 @@
 import React from 'react'
 import './Footer.css';
 import templet6 from "../Img/homepage/6.png";
-import logo6 from "../Img/Logo/logo6.png"
+import logo from "../Img/jobsmelaLogo/png/mainLogo.png"
+
 import {
   fetchJobCategories
 } from "../services/operations/jobDetailsAPI"
@@ -38,8 +39,7 @@ const Footer = () => {
               <div className="innerFooter2Container">
                 <div className="FooterLeftContainer">
                   <div className="footerSearchIcon">
-                    <img id="footerIcon" className='logoSize' src={logo6} alt="Search Icon" />
-                    <h3 className='footerJobSearch'>Job Hunt</h3>
+                    <img id="footerIcon" className='logoSize' src={logo} alt="Search Icon" />
                   </div>
                   <h2 id="Footerfind" className="footerPara ">Find Your Dream Job</h2>
                   <p className="footerPara">Deepak Kumar</p>

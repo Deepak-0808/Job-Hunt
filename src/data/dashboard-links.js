@@ -1,5 +1,4 @@
 import { ACCOUNT_TYPE } from "../utils/constants";
-import { MdOutlineSaveAlt } from "react-icons/md";
 
 export const sidebarLinks = [
   {

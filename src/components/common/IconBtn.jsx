@@ -13,7 +13,7 @@ export default function IconBtn({
       onClick={onclick}
       className={`flex items-center ${
         outline ? "border border-black bg-transparent" : " bg-black"
-      } cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-white ${customClasses}`}
+      } cursor-pointer gap-x-[1vw] rounded-md py-[1vw] px-[2vw] font-semibold text-[2vw] text-white max-text-size-my-profile ${customClasses}`}
       type={type}
     >
       {children ? (

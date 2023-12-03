@@ -43,7 +43,7 @@ const SignIn = () => {
             </div>
             <div id='rightContainerSignIn'>
                 <div id='rightContainerInnerboxSignIn'>
-                    <h2><center className=' font-bold text-2xl mb-12'>Log in to Job Search</center></h2>
+                    <h2><center className=' font-bold text-2xl mb-12'>SignIn Now</center></h2>
                     <form onSubmit={handleOnSubmit} action="" id='form'>
                         <label htmlFor="email">Email <sup className="text-pink-200">*</sup></label>
                         <input onChange={handleOnChange} value={email} className='signinInput' placeholder='Email' type="email" name="email" id="email" required/>
@@ -75,7 +75,7 @@ const SignIn = () => {
                             </Link>
                             
                         </div>
-                        <button id='btnsubmit' type="submit">Sign In</button>
+                        <button id='btnsubmit' type="submit">SignIn</button>
                     </form>
                     <div id='signinfooter'>
                         <div>Don't have an Account? </div>

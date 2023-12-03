@@ -112,6 +112,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
     }
     catch(error) {
         console.log("Error:" , error.message);
+        toast.error(error.message);
         setLoading(false);
     }
   }

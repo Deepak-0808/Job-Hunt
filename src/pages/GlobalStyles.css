@@ -8,3 +8,16 @@
     border-radius: 4px;
   }
   
+
+@media (max-width: 900px) {
+  .form-style-profile{
+    display: block;
+      padding: 2vw;
+      color: black;
+      outline: none;
+      border: 1px solid blue;
+      border-radius: 4px;
+      font-size: 2vw;
+  }
+
+}

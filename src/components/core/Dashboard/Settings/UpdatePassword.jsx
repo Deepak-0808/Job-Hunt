@@ -32,8 +32,8 @@ export default function UpdatePassword() {
   return (
     <>
       <form onSubmit={handleSubmit(submitPasswordForm)}>
-        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-black bg-white p-8 px-12">
-          <h2 className="text-lg font-bold text-black">Password</h2>
+        <div className="my-[3vw] flex flex-col gap-y-6 rounded-md border-[1px] border-black bg-white p-[2vw]">
+          <h2 className="text-[4vw] font-bold text-black max-text-size-my-profile">Password</h2>
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="relative flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="oldPassword" className="lable-style">
@@ -44,12 +44,12 @@ export default function UpdatePassword() {
                 name="oldPassword"
                 id="oldPassword"
                 placeholder="Enter Current Password"
-                className="form-style"
+                className="form-style-profile form-style"
                 {...register("oldPassword", { required: true })}
               />
               <span
                 onClick={() => setShowOldPassword((prev) => !prev)}
-                className="absolute right-3 top-[38px] z-[10] cursor-pointer"
+                className="absolute right-5 top-[38px] z-[10] cursor-pointer"
               >
                 {showOldPassword ? (
                   <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -58,7 +58,7 @@ export default function UpdatePassword() {
                 )}
               </span>
               {errors.oldPassword && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[2vw] text-yellow-100">
                   Please enter your Current Password.
                 </span>
               )}
@@ -72,7 +72,7 @@ export default function UpdatePassword() {
                 name="newPassword"
                 id="newPassword"
                 placeholder="Enter New Password"
-                className="form-style"
+                className="form-style-profile form-style"
                 {...register("newPassword", { required: true })}
               />
               <span
@@ -86,7 +86,7 @@ export default function UpdatePassword() {
                 )}
               </span>
               {errors.newPassword && (
-                <span className="-mt-1 text-[12px] text-yellow-100">
+                <span className="-mt-1 text-[2vw] text-yellow-100">
                   Please enter your New Password.
                 </span>
               )}
@@ -98,7 +98,7 @@ export default function UpdatePassword() {
             onClick={() => {
               navigate("/dashboard/my-profile")
             }}
-            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+            className="cursor-pointer rounded-md bg-richblack-700 py-[1vw] px-[2vw] font-semibold text-[2vw] text-richblack-50 max-text-size-my-profile"
           >
             Cancel
           </button>

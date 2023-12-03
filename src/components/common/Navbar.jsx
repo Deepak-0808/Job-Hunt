@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import logo5 from "../../Img/Logo/logo5.png"
+import logonobackground from "../../Img/jobsmelaLogo/png/mainLogo.png"
 import { useSelector } from 'react-redux';
 import {NavbarLinks} from "../../data/navbar-links"
 import ProfileDropDown from '../core/Auth/ProfileDropDown';
@@ -38,10 +38,10 @@ const Navbar = () => {
             <ul id="navBar">
               <div id="navLeft" className="navLeftClass">
                 <Link to={"/"}>
-                <img id="searchIcon" className='logoSize' src={logo5} alt="" />
+                <img id="searchIcon" className='logoSize' src={logonobackground} alt="" />
                 </Link>
                 
-                <h4 id="jobSearch" >Job Hunt</h4>
+                {/* <h4 id="jobSearch" ></h4> */}
               </div>
               
                 <div id="navCenter">  

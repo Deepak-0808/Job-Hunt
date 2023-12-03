@@ -39,7 +39,7 @@ export default function Instructor() {
   //   0
   // )
   const totalAmount=1000;
-  const totalStudents=3;
+  const totalStudents=5;
 
 
   return (
