@@ -14,6 +14,7 @@ import { useNavigate} from "react-router-dom"
 import { useState,useEffect } from 'react';
 import { getAllJobs } from "../services/operations/jobDetailsAPI"
 import { addBookmark } from "../services/operations/contactUsAPI"
+import toast from "react-hot-toast";
 
 
 const Browse = () => {
@@ -94,7 +95,8 @@ const Browse = () => {
         
     }
     catch(error) {
-        console.log("Error:" , error.message);
+        // console.log("Error:" , error.message);
+        toast.error(error.message);
         setLoading(false);
     }
   }
@@ -144,7 +146,7 @@ const Browse = () => {
 
     try {
       setLoading(true)
-      console.log("filter data",queryParams)
+      // console.log("filter data",queryParams)
       const filteredJobData = await getAllJobs(queryParams);
       setLoading(false);
       setJobs(filteredJobData);  
@@ -187,7 +189,7 @@ const Browse = () => {
               <img className="temp1ContactUs" src={templet1} alt="loading" />
               <div id="innerHeroSection">
                 <h3 id="jobListedH3" className="jobListed">
-                  7457+ Job Listed
+                  100+ Job Listed
                 </h3>
                 <p className="jobListed">Explore Opportunities: Your Next Job Awaits.</p>
               </div>
@@ -301,7 +303,7 @@ const Browse = () => {
                         </div>
                         <div className="flexBox date">
                           <div >Date Line:</div>
-                          <div id="date" > 10 Nov 2023</div>
+                          <div id="date" > 10 Dec 2023</div>
                         </div>
                       </div>
                     </div> 

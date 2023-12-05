@@ -59,7 +59,7 @@ const Home = () => {
 
 const [currentPage, setCurrentPage] = useState(1);
 const jobsPerPage = 4;
-const totalJobs = jobs.length; /* Get the total number of jobs */
+const totalJobs = jobs.length;
 const totalPages = Math.ceil(totalJobs / jobsPerPage);
 
 const handleForwardClick = () => {
@@ -111,7 +111,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
         
     }
     catch(error) {
-        console.log("Error:" , error.message);
+        // console.log("Error:" , error.message);
         toast.error(error.message);
         setLoading(false);
     }
@@ -192,7 +192,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
             <img id="heroimg" src={templet1} alt="loading" />
             <div id="innerHeroSection">
               <h3 id="jobListedH3" className="jobListed">
-                7457+ Job Listed
+                100+ Job Listed
               </h3>
               <h2 id="dreamJob" className="jobListed">
                 Find Your Dream Job
@@ -296,7 +296,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
                         </div>
                         <div className="flexBox date">
                           <div >Date Line:</div>
-                          <div id="date" > 10 Nov 2023</div>
+                          <div id="date" > 10 Dec 2023</div>
                         </div>
                       </div>
                     </div> 
