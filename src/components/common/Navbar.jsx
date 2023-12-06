@@ -8,6 +8,7 @@ import ProfileDropDown from '../core/Auth/ProfileDropDown';
 import { useEffect } from 'react';
 import { categories } from '../../services/apis2';
 import { apiConnector } from '../../services/apiConnector';
+import toast from 'react-hot-toast';
 
 
 
@@ -19,10 +20,11 @@ const Navbar = () => {
   const fetchSublinks=async()=>{
       try{
         const result= await apiConnector("GET",categories.CATEGORIES_API);
-        console.log("Printing category list:",result);
+        // console.log("Printing category list:",result);
       }
       catch(error){
-        console.log("Could not fetch the category list",error);
+        // console.log("Could not fetch the category list",error);
+        toast.error("Could not fetch the category list")
       }
   }
   
