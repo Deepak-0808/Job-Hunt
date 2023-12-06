@@ -102,8 +102,9 @@ export function deleteProfile(token, navigate) {
       }
       toast.success("Profile Deleted Successfully")
       
+      navigate("/signin")
       dispatch(logout(navigate))
-      //  navigate("/signin")
+      
       
     } catch (error) {
       // console.log("DELETE_PROFILE_API API ERROR............", error)

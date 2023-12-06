@@ -108,8 +108,13 @@ export function login(email, password, navigate) {
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
+      if(response.data.success===true){
+        toast.success(response.data.message)
+      }
+      else{
+        toast.error(response.data.message)
+      }
 
-      toast.success("Login Successful")
       dispatch(setToken(response.data.token))
       const userImage = response.data?.user?.image
         ? response.data.user.image
@@ -142,11 +147,17 @@ export function getPasswordResetToken(email, setEmailSent) {
         throw new Error(response.data.message)
       }
 
-      toast.success("Reset Email Sent")
+      if(response.data.success===true){
+        toast.success(response.data.message)
+      }
+      else{
+        toast.error(response.data.message)
+      }
+
       setEmailSent(true)
     } catch (error) {
       // console.log("RESET PASS TOKEN ERROR............", error)
-      toast.error("Failed To Send Reset Email")
+      toast.error(error.response.data.message)
     }
     toast.dismiss(toastId)
     dispatch(setLoading(false))
@@ -169,12 +180,17 @@ export function resetPassword(password, confirmPassword, token, navigate) {
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
+      if(response.data.success===true){
+        toast.success(response.data.message)
+      }
+      else{
+        toast.error(response.data.message)
+      }
 
-      toast.success("Password Reset Successfully")
       navigate("/signin")
     } catch (error) {
       // console.log("RESET PASSWORD ERROR............", error)
-      toast.error("Failed To Reset Password")
+      toast.error(error.response.data.message)
     }
     toast.dismiss(toastId)
     dispatch(setLoading(false))
