@@ -166,7 +166,7 @@ exports.login = async (req, res) => {
 			});
 		}
 	} catch (error) {
-		console.error(error);
+		// console.error(error);
 		// Return 500 Internal Server Error status code with error message
 		return res.status(500).json({
 			success: false,
@@ -174,6 +174,7 @@ exports.login = async (req, res) => {
 		});
 	}
 };
+
 // Send OTP For Email Verification
 exports.sendotp = async (req, res) => {
 	try {
