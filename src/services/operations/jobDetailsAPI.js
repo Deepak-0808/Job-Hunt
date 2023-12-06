@@ -32,7 +32,7 @@ export const getAllJobs = async (queryParams) => {
     }
     result = response?.data?.data
   } catch (error) {
-    console.log("GET_ALL_JOB_API API ERROR............", error)
+    // console.log("GET_ALL_JOB_API API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)
@@ -47,16 +47,16 @@ export const fetchJobDetails = async (jobId) => {
     const response = await apiConnector("POST", JOB_DETAILS_API, {
       jobId,
     })
-    console.log("JOB_DETAILS_API API RESPONSE............", response)
+    // console.log("JOB_DETAILS_API API RESPONSE............", response)
 
     if (!response.data.success) {
       throw new Error(response.data.message)
     }
     result = response.data
   } catch (error) {
-    console.log("JOB_DETAILS_API ERROR............", error)
+    // console.log("JOB_DETAILS_API ERROR............", error)
     result = error.response.data
-    // toast.error(error.response.data.message);
+    toast.error(error.response.data.message);
   }
   toast.dismiss(toastId)
   //   dispatch(setLoading(false));
@@ -68,13 +68,13 @@ export const fetchJobCategories = async () => {
   let result = []
   try {
     const response = await apiConnector("GET", JOB_CATEGORIES_API)
-    console.log("JOB_CATEGORIES_API API RESPONSE............", response)
+    // console.log("JOB_CATEGORIES_API API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch Job Categories")
     }
     result = response?.data?.data
   } catch (error) {
-    console.log("JOB_CATEGORIES_API API ERROR............", error)
+    // console.log("JOB_CATEGORIES_API API ERROR............", error)
     toast.error(error.message)
   }
   return result
@@ -90,14 +90,14 @@ export const addJobDetails = async (data, token) => {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${token}`,
     })
-    console.log("CREATE_JOB_API RESPONSE............", response)
+    // console.log("CREATE_JOB_API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Add Job Details")
     }
     toast.success("Job details added successfully")
     result = response?.data?.data
   } catch (error) {
-    console.log("CREATE_JOB_API ERROR............", error)
+    // console.log("CREATE_JOB_API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)
@@ -113,14 +113,14 @@ export const editJobDetails = async (data, token) => {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${token}`,
     })
-    console.log("EDIT_JOB_API............", response)
+    // console.log("EDIT_JOB_API............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Update Job Details")
     }
     toast.success("Job Details Updated Successfully")
     result = response?.data?.data
   } catch (error) {
-    console.log("EDIT_JOB_API ERROR............", error)
+    // console.log("EDIT_JOB_API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)
@@ -135,14 +135,14 @@ export const createCompany = async (data, token) => {
     const response = await apiConnector("POST", CREATE_COMPANY_API, data, {
       Authorization: `Bearer ${token}`,
     })
-    console.log("CREATE_COMPANY_API RESPONSE............", response)
+    // console.log("CREATE_COMPANY_API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Create Company")
     }
     toast.success("Job company data created")
     result = response?.data?.updatedJob
   } catch (error) {
-    console.log("CREATE_COMPANY_API ERROR............", error)
+    // console.log("CREATE_COMPANY_API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)
@@ -157,14 +157,14 @@ export const updateCompany = async (data, token) => {
     const response = await apiConnector("POST", UPDATE_COMPANY_API, data, {
       Authorization: `Bearer ${token}`,
     })
-    console.log("UPDATE_COMPANY_API RESPONSE............", response)
+    // console.log("UPDATE_COMPANY_API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Update Company Data")
     }
     toast.success("Job Company Data Updated")
     result = response?.data?.data
   } catch (error) {
-    console.log("UPDATE_COMPANY_API ERROR............", error)
+    // console.log("UPDATE_COMPANY_API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)
@@ -176,13 +176,13 @@ export const fetchCompaniesData = async () => {
   let result = []
   try {
     const response = await apiConnector("GET", COMPANY_DATA_API)
-    console.log("COMPANY_DATA_API RESPONSE............", response)
+    // console.log("COMPANY_DATA_API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch Company Data")
     }
     result = response?.data?.data
   } catch (error) {
-    console.log("COMPANY_DATA_API ERROR............", error)
+    // console.log("COMPANY_DATA_API ERROR............", error)
     toast.error(error.message)
   }
   return result
@@ -196,14 +196,14 @@ export const deleteCompany = async (data, token) => {
       const response = await apiConnector("POST", DELETE_COMPANY_API, data, {
         Authorization: `Bearer ${token}`,
       })
-      console.log("DELETE_COMPANY_API API RESPONSE............", response)
+      // console.log("DELETE_COMPANY_API API RESPONSE............", response)
       if (!response?.data?.success) {
         throw new Error("Could Not Delete Company")
       }
       toast.success("Job Company Deleted")
       result = response?.data?.data
     } catch (error) {
-      console.log("DELETE SECTION API ERROR............", error)
+      // console.log("DELETE SECTION API ERROR............", error)
       toast.error(error.message)
     }
     toast.dismiss(toastId)
@@ -220,13 +220,13 @@ export const fetchAdminJobs = async (token) => {
         Authorization: `Bearer ${token}`,
       }
     )
-    console.log("ADMIN JOBS API RESPONSE............", response)
+    // console.log("ADMIN JOBS API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch ADMIN JOBS")
     }
     result = response?.data?.data
   } catch (error) {
-    console.log("ADMIN JOBS API ERROR............", error)
+    // console.log("ADMIN JOBS API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)
@@ -240,13 +240,13 @@ export const deleteJob = async (data, token) => {
     const response = await apiConnector("DELETE", DELETE_JOB_API, data, {
       Authorization: `Bearer ${token}`,
     })
-    console.log("DELETE JOB API RESPONSE............", response)
+    // console.log("DELETE JOB API RESPONSE............", response)
     if (!response?.data?.success) {
       throw new Error("Could Not Delete Job")
     }
     toast.success("Job Deleted")
   } catch (error) {
-    console.log("DELETE JOB API ERROR............", error)
+    // console.log("DELETE JOB API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)
@@ -263,14 +263,14 @@ export const getFullDetailsOfJob = async (jobId, token) => {
         Authorization: `Bearer ${token}`,
       }
     )
-    console.log("JOB_FULL_DETAILS_API API RESPONSE............", response)
+    // console.log("JOB_FULL_DETAILS_API API RESPONSE............", response)
 
     if (!response.data.success) {
       throw new Error(response.data.message)
     }
     result = response?.data?.data
   } catch (error) {
-    console.log("JOB_FULL_DETAILS_API API ERROR............", error)
+    // console.log("JOB_FULL_DETAILS_API API ERROR............", error)
     result = error.response.data
     // toast.error(error.response.data.message);
   }
