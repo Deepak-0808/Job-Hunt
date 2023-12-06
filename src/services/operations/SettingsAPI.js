@@ -4,7 +4,6 @@ import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiConnector"
 import { settingsEndpoints } from "../apis2"
 import { logout } from "./authAPI"
-const navigate = useNavigate()
 
 const {
   UPDATE_DISPLAY_PICTURE_API,
