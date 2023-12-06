@@ -55,6 +55,7 @@ function App() {
           <Route path="/careeradvice" element={<CareerAdvice/>} />
           <Route path="*" element={<NotFound/>} />
           <Route path="/signin" element={<OpenRoute><SignIn/></OpenRoute>} />
+          <Route path="/login" element={<OpenRoute><SignIn/></OpenRoute>} />
           <Route path="/signup" element={ <OpenRoute><SignUp/></OpenRoute> } />
           <Route path="/forgot" element={<OpenRoute><ForgotPassword/></OpenRoute>} />
           <Route path="/update-password/:id" element={<OpenRoute><UpdatePassword/></OpenRoute>} />
