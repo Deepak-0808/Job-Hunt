@@ -4,6 +4,7 @@ import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiConnector"
 import { settingsEndpoints } from "../apis2"
 import { logout } from "./authAPI"
+const navigate = useNavigate()
 
 const {
   UPDATE_DISPLAY_PICTURE_API,
@@ -102,8 +103,8 @@ export function deleteProfile(token, navigate) {
       }
       toast.success("Profile Deleted Successfully")
       
-      navigate("/signin")
-      dispatch(logout(navigate))
+      navigate("/")
+      // dispatch(logout(navigate))
       
       
     } catch (error) {
