@@ -130,6 +130,10 @@
 #JobBoxMainContainer{
     display: flex;
     justify-content: space-between;
+    
+}
+#JobBoxMainContainer:hover{
+    border: 1px solid #3939d6;
 }
 .flexBox{
     display: flex;

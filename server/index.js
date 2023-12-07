@@ -26,6 +26,7 @@ app.use(cookieParser());
 app.use(
     cors({
         origin:"https://www.jobsmela.online",
+        // origin:"http://localhost:3000",
         Credential:true,
 
     })
