@@ -72,8 +72,6 @@ exports.contactUsEmail = (
     
     <body>
         <div class="container">
-            // <a href="https://studynotion-edtech-project.vercel.app"><img class="logo"
-                    // src="https://i.ibb.co/7Xyj3PC/logo.png" alt="StudyNotion Logo"></a>
             <div class="message">Contact Form Confirmation</div>
             <div class="body">
                 <p>Dear ${fullname},</p>
@@ -87,7 +85,7 @@ exports.contactUsEmail = (
                 <p>We appreciate your interest and will get back to you shortly. </p>
             </div>
             <div class="support">If you have any further questions or need immediate assistance, please feel free to reach
-                out to us at <a href="mailto: i.deepak0808@gmail.com">i.deepak0808@gmail.com</a>. We are here to help!</div>
+                out to us at <a href="mailto: jobsmela.info@gmail.com">jobsmela.info@gmail.com</a>. We are here to help!</div>
         </div>
     </body>
     
