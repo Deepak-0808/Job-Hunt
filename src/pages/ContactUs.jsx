@@ -23,7 +23,7 @@ const ContactUs = () => {
           </div>
         </section>
         <div className=' w-[100vw] flex bg-richwhite contactFormMainContainer'>
-          <div className=' w-[50%] p-[20px] flex justify-center align-middle contactFormImgContainer'>
+          <div className=' w-[50%] pb-[20px] flex justify-center align-middle contactFormImgContainer'>
             <img src={contactus} alt="error" className='w-[85%]'/>
           </div>
           <div className=' w-[50%] pl-[3vw] pr-[3vw] contactFormInputContainer'>

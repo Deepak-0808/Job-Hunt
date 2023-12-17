@@ -8,9 +8,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../services/operations/authAPI";
 
 const SignIn = () => {
-
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
@@ -18,9 +16,7 @@ const SignIn = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-
   const { email, password } = formData;
-
   const handleOnChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -43,27 +39,22 @@ const SignIn = () => {
             </div>
             <div id='rightContainerSignIn'>
                 <div id='rightContainerInnerboxSignIn'>
-                    <h2><center className=' font-bold text-2xl mb-12'>SignIn Now</center></h2>
+                    <h2><center className=' font-bold text-2xl mb-12 phone:text-lg tablet:text-xl'>Sign In to your Account</center></h2>
                     <form onSubmit={handleOnSubmit} action="" id='form'>
                         <label htmlFor="email">Email <sup className="text-pink-200">*</sup></label>
                         <input onChange={handleOnChange} value={email} className='signinInput' placeholder='Email' type="email" name="email" id="email" required/>
 
                         <label className="relative" htmlFor="password">Password <sup className="text-pink-200">*</sup>
                         <input onChange={handleOnChange} type={showPassword ? "text" : "password"} value={password} placeholder="Password" className='signinInput' name="password" id="password" required/>
-                       
                             <span onClick={() => setShowPassword((prev) => !prev)}
-                                className=" absolute right-3 top-[50px] cursor-pointer">
+                                className=" absolute right-3 top-[50px] phone:top-[40px] cursor-pointer">
                                 {showPassword ? (
                                     <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
                                     ) : (
                                     <AiOutlineEye fontSize={24} fill="#AFB2BF" />
                                 )}
                             </span>
-
                         </label>
-                        
-
-                        
 
                         <div id='checkAndForgotContainer'>
                             <div id='checkboxRemember'>

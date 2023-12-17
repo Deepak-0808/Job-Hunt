@@ -206,7 +206,7 @@ const Browse = () => {
                   <input
                     className="filterInputClass"
                     type="text"
-                    placeholder="Search Keyword"
+                    placeholder="Job Title"
                     value={keywords}
                     onChange={(e) => setKeywords(e.target.value)}
                   />

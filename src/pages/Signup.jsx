@@ -34,10 +34,17 @@ const Signup = () => {
   const { fullName, email, password, confirmPassword } = formData
   // Handle input fields, when some value changes
   const handleOnChange = (e) => {
+    const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [e.target.name]: e.target.value,
-    }))
+      [name]: value,
+    }));
+
+    if (name === "password" && value !== "") {
+      checkPasswordStrength(value);
+    } else {
+      setPasswordStrength("");
+    }
   }
 
   // Handle Form Submission
@@ -52,8 +59,6 @@ const Signup = () => {
       ...formData,
       accountType,
     }
-
-    // Setting signup data to state
     // To be used after otp verification
     dispatch(setSignupData(signupData))
     // Send OTP to user for verification
@@ -84,6 +89,23 @@ const Signup = () => {
   // ]
 
 
+    const [passwordStrength, setPasswordStrength] = useState("")
+
+    const checkPasswordStrength = (password) => {
+      let strength = "weak";
+      
+      if (password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password)) {
+        strength = "strong";
+      } else if (password.length >= 6 && (/[a-z]/.test(password) || /[A-Z]/.test(password) || /\d/.test(password))) {
+        strength = "medium";
+      }
+
+      setPasswordStrength(strength);
+    };
+
+    
+
+
 
   return (
     <div>
@@ -93,7 +115,7 @@ const Signup = () => {
             </div>
             <div id='rightContainer'>
                 <div id='rightContainerInnerbox'>
-                    <h2><center className=' font-bold text-2xl mb-12'>Welcome To Jobs Mela</center></h2>
+                    <h2><center className=' font-bold text-2xl mb-12'>Create your account</center></h2>
                     {/* <Tab tabData={tabData} field={accountType} setField={setAccountType} /> */}
                     <form onSubmit={handleOnSubmit} action="" id='form'>
                         
@@ -107,7 +129,7 @@ const Signup = () => {
                         
                           <input onChange={handleOnChange} value={password} type={showPassword ? "text" : "password"} className='signupInput' name="password" id="password" placeholder="Password" required/>
                             <span onClick={() => setShowPassword((prev) => !prev)}
-                                className="absolute top-[50px] right-3 cursor-pointer">
+                                className="absolute top-[50px] phone:top-[40px] right-3 cursor-pointer">
                                 {showPassword ? (
                                     <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
                                 ) : (
@@ -119,7 +141,7 @@ const Signup = () => {
                         
                           <input onChange={handleOnChange} value={confirmPassword} type={showConfirmPassword ? "text" : "password"} className='signupInput' placeholder="Confirm Password" name="confirmPassword" id="confirmPassword" required/>
                           <span onClick={() => setShowConfirmPassword((prev) => !prev)}
-                            className="absolute top-[50px] right-3 cursor-pointer">
+                            className="absolute top-[50px] phone:top-[40px]  right-3 cursor-pointer">
                             {showConfirmPassword ? (
                                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
                             ) : (
@@ -129,7 +151,16 @@ const Signup = () => {
 
                         </label>
 
-                        <div>Password strength</div>
+                        <div className=' passStrMainContainer'>
+                          <div>Password strength</div>
+                          <div className="password-strength">
+                            <div className={`strength ${passwordStrength === 'weak' && 'weak'}`}></div>
+                            <div className={`strength ${passwordStrength === 'medium' && 'medium'}`}></div>
+                            <div className={`strength ${passwordStrength === 'strong' && 'strong'}`}></div>
+                          </div>
+                        </div>
+                       
+                        
                         <div id='policySignup'>
                             <input type="checkbox" name="policy" id="checkboxSignup"/>
                             <div>I agree the private policy</div>

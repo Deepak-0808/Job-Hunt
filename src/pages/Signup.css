@@ -1,7 +1,6 @@
 #signUpMainContainer{
     display: flex;
     width: 100vw;
-    /* height: calc(100vh - 100px); */
     height: auto;
     margin-left: 0px;
     margin-top: 0px;
@@ -10,7 +9,7 @@
 }
 
 #leftContainer{
-    background-color: #CCCCF5;
+    background-color: #e6e6f9;
     width: 50%;
     height: auto;
     padding-top: 20px;
@@ -27,19 +26,24 @@
 
 #rightContainer{
     width: 50%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
+    background-color: #e6e6f9;
 
  }
 
 #rightContainerInnerbox{
     width: 65%;
     height: auto;
-    padding: 8px;
-    font-size: 18px;  
+    padding: 18px;
+    font-size: 18px; 
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 5px; 
 
 }
 #policySignup{
@@ -101,7 +105,7 @@
 
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     #leftContainer{
         display: none;
     }
@@ -112,25 +116,19 @@
         align-items: center;
     }
     #rightContainerInnerbox{
-        width: 65%;
+        width: 85%;
         height: auto;
         padding: 8px;
         font-size: 15px;    
     }
+    .signupInput{
+      padding: 8px;
+  
+    }
+    #signupBtn{
+      padding: 7px;
+    }
 
-  .signupInput{
-    display: block;
-    padding: 9px;
-    width: 89%;
-    margin-bottom: 18px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    border: 1px solid blue;
-    outline: none;
-    
-  }
   #checkbox{
     width: 15px;
     height: 15px;
@@ -158,7 +156,21 @@
 
 }
 
-@media screen and (min-width: 750px) and (max-width: 900px) {
+@media screen and (min-width: 500px) and (max-width: 900px) {
+  #rightContainer{
+    padding-right: 3vw;
+  }
+  #rightContainerInnerbox{
+    width: 100%;
+    padding: 10px;
+  }
+  .signupInput{
+    padding: 11px;
+
+  }
+  #signupBtn{
+    padding: 10px;
+  }
     #footer{
         display: block;
         
@@ -168,4 +180,38 @@
         margin-left: 5px;
     }
     
+}
+
+
+
+
+/* password strength */
+.passStrMainContainer{
+  display: flex;
+  align-items: center;
+}
+
+.password-strength {
+  display: flex;
+  margin-left: 20px;
+}
+
+.strength {
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.weak {
+  background-color: red;
+  color: white;
+}
+
+.medium {
+  background-color: yellow;
+}
+
+.strong {
+  background-color: green;
+  color: white;
 }

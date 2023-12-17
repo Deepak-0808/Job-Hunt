@@ -217,7 +217,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
                  onChange={(e) => setKeywords(e.target.value)}
                  className="inputClass" 
                  type="text" 
-                 placeholder="Search Keyword"
+                 placeholder="Job Title"
                 />
                 <input 
                   value={location}

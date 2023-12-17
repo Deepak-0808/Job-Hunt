@@ -2,6 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      'phone': {'max': '500px'},
+      // => @media (min-width: 640px and max-width: 767px) { ... }
+
+      'tablet': {'min': '500px', 'max': '900px'},
+      // => @media (min-width: 768px and max-width: 1023px) { ... }
+    },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       "edu-sa": ["Edu SA Beginner", "cursive"],

@@ -180,6 +180,7 @@
 
 }
 .inputClass{
+    width: 16vw;
     border: 1px solid #3939d6;
     border-radius: 0.5vw;
     color: #121213;
@@ -225,6 +226,7 @@
     padding-top: 0.5vw;
     padding-bottom: 0.5vw;
     border-radius: 0.5vw;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 500px) and (max-width: 900px) {
@@ -232,6 +234,7 @@
         text-align: center;
     }
     .inputClass{
+        width: 16vw;
         border: 1px solid #3939d6;
         border-radius: 0.5vw;
         color: #121213;
@@ -240,7 +243,7 @@
         padding-top: 1vw;
         padding-bottom: 1vw;
         outline: none;
-        font-size: medium;
+        font-size: 2vw;
         margin: 0.8vw;
 
     }
@@ -260,7 +263,7 @@
         padding-top: 0.8vw;
         padding-bottom: 0.8vw;
         outline: none;
-        font-size: medium;
+        font-size: 2vw;
         cursor: pointer;
         margin: 1vw;
         
@@ -280,6 +283,8 @@
         padding-top: 0.5vw;
         padding-bottom: 0.5vw;
         border-radius: 0.5vw;
+        font-size: 2vw;
+
     }
 }
 
@@ -302,8 +307,12 @@
         display: flex;
         flex-direction: column;
         width: 80vw;
+        align-items: center;
+        
     }
     .inputClass{
+        width: 50vw;
+        max-width: 200px;
         border: 1px solid #3939d6;
         border-radius: 1vw;
         color: #121213;
@@ -312,7 +321,7 @@
         padding-top: 2vw;
         padding-bottom: 2vw;
         outline: none;
-        font-size: medium;
+        font-size: small;
         margin: 1vw;
     }
     .inputClass::placeholder{
