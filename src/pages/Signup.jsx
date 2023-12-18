@@ -10,14 +10,13 @@ import { useNavigate } from "react-router-dom"
 import { sendOtp } from "../services/operations/authAPI"
 import { setSignupData } from "../slices/authSlice"
 import { ACCOUNT_TYPE } from "../utils/constants"
-// import Tab from "../components/common/Tab"
 
 
 const Signup = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  // student or instructor
+  // User or Admin
   const [accountType, setAccountType] = useState(ACCOUNT_TYPE.USER)
 
   const [formData, setFormData] = useState({
@@ -40,7 +39,7 @@ const Signup = () => {
       [name]: value,
     }));
 
-    if (name === "password" && value !== "") {
+    if ((name === "password"||name==="confirmPassword") && value !== "") {
       checkPasswordStrength(value);
     } else {
       setPasswordStrength("");
@@ -74,38 +73,29 @@ const Signup = () => {
     setAccountType(ACCOUNT_TYPE.USER)
   }
 
- 
-  // const tabData = [
-  //   {
-  //     id: 1,
-  //     tabName: "Student",
-  //     type: ACCOUNT_TYPE.STUDENT,
-  //   },
-  //   {
-  //     id: 2,
-  //     tabName: "Instructor",
-  //     type: ACCOUNT_TYPE.INSTRUCTOR,
-  //   },
-  // ]
 
 
     const [passwordStrength, setPasswordStrength] = useState("")
 
     const checkPasswordStrength = (password) => {
       let strength = "weak";
-      
-      if (password.length >= 8 && /[a-z]/.test(password) && /[A-Z]/.test(password) && /\d/.test(password)) {
+      const lowerCaseRegex = /[a-z]/;
+      const upperCaseRegex = /[A-Z]/;
+      const numberRegex = /\d/;
+      const specialCharRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
+    
+      if (password.length >= 8 && lowerCaseRegex.test(password) && upperCaseRegex.test(password) && numberRegex.test(password) && specialCharRegex.test(password)) {
         strength = "strong";
-      } else if (password.length >= 6 && (/[a-z]/.test(password) || /[A-Z]/.test(password) || /\d/.test(password))) {
+      } else if (password.length >= 5 && lowerCaseRegex.test(password) && upperCaseRegex.test(password) && numberRegex.test(password)) {
         strength = "medium";
+      } else if (password.length >= 3 && (lowerCaseRegex.test(password) || upperCaseRegex.test(password) || numberRegex.test(password))) {
+        strength = "weak";
       }
 
+    
       setPasswordStrength(strength);
     };
-
     
-
-
 
   return (
     <div>
@@ -116,7 +106,6 @@ const Signup = () => {
             <div id='rightContainer'>
                 <div id='rightContainerInnerbox'>
                     <h2><center className=' font-bold text-2xl mb-12'>Create your account</center></h2>
-                    {/* <Tab tabData={tabData} field={accountType} setField={setAccountType} /> */}
                     <form onSubmit={handleOnSubmit} action="" id='form'>
                         
                         <label htmlFor="fullName">Full Name <sup className="text-pink-200">*</sup></label>

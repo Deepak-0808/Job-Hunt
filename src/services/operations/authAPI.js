@@ -93,7 +93,22 @@ export function signUp(
   }
 }
 
-export function login(email, password, navigate) {
+// export function accountTypeCheck(email){
+//   return async (dispatch)=>{
+//     const toastId = toast.loading("Loading...")
+//     dispatch(setLoading(true))
+//     try {
+//       const response = await apiConnector("POST", ACCOUNT_TYPE_CHECK_API, {
+//         email,
+//       })
+      
+//     } catch (error) {
+//       toast.error(error.response.data.message);
+//     }
+//   }
+// }
+
+export function login(email, password, accountType, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
@@ -101,6 +116,7 @@ export function login(email, password, navigate) {
       const response = await apiConnector("POST", LOGIN_API, {
         email,
         password,
+        accountType,
       })
 
       // console.log("LOGIN API RESPONSE............", response)

@@ -112,7 +112,7 @@ exports.signup = async (req, res) => {
 exports.login = async (req, res) => {
 	try {
 		// Get email and password from request body
-		const { email, password } = req.body;
+		const { email, password, accountType } = req.body;
 
 		// Check if email or password is missing
 		if (!email || !password) {
@@ -131,9 +131,19 @@ exports.login = async (req, res) => {
 			// Return 401 Unauthorized status code with error message
 			return res.status(401).json({
 				success: false,
-				message: `User is not Registered with Us Please SignUp to Continue`,
+				message: `Account Not Found`,
 			});
 		}
+
+		if(accountType==="Admin"){
+			if (user.accountType!=="Admin") {
+				return res.status(401).json({
+					success: false,
+					message: `You Are Not An Admin`,
+				});
+			}
+		}
+
 
 		// Generate JWT token and Compare Password
 		if (await bcrypt.compare(password, user.password)) {
@@ -190,7 +200,7 @@ exports.sendotp = async (req, res) => {
 			// Return 401 Unauthorized status code with error message
 			return res.status(401).json({
 				success: false,
-				message: `User is Already Registered`,
+				message: `Email is Already Registered`,
 			});
 		}
 

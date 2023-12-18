@@ -5,9 +5,13 @@ import {Link,useNavigate} from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { ACCOUNT_TYPE } from "../utils/constants"
+import Tab from "../components/common/Tab"
 import { login } from "../services/operations/authAPI";
 
+
 const SignIn = () => {
+  const [accountType, setAccountType] = useState(ACCOUNT_TYPE.USER)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
@@ -17,6 +21,7 @@ const SignIn = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const { email, password } = formData;
+
   const handleOnChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -26,8 +31,25 @@ const SignIn = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(email, password, navigate));
+    
+        dispatch(login(email, password, accountType, navigate));
+    
   };
+
+  
+
+  const tabData = [
+    {
+      id: 1,
+      tabName: "User SignIn",
+      type: ACCOUNT_TYPE.USER,
+    },
+    {
+      id: 2,
+      tabName: "Admin SignIn",
+      type: ACCOUNT_TYPE.ADMIN,
+    },
+  ]
 
 
 
@@ -40,6 +62,7 @@ const SignIn = () => {
             <div id='rightContainerSignIn'>
                 <div id='rightContainerInnerboxSignIn'>
                     <h2><center className=' font-bold text-2xl mb-12 phone:text-lg tablet:text-xl'>Sign In to your Account</center></h2>
+                    <Tab tabData={tabData} field={accountType} setField={setAccountType} />
                     <form onSubmit={handleOnSubmit} action="" id='form'>
                         <label htmlFor="email">Email <sup className="text-pink-200">*</sup></label>
                         <input onChange={handleOnChange} value={email} className='signinInput' placeholder='Email' type="email" name="email" id="email" required/>
