@@ -123,7 +123,7 @@ const ContactUsForm = () => {
                                     className='w-[25%] cursor-pointer block p-[14px] tablet:p-[8px] phone:p-[6px] text-black outline-none border  border-[blue] rounded-md'
                                     {...register("countrycode", {required:true})}
                                 >
-                                    {
+                                    {/* {
                                         CountryCode.map( (element , index) => {
                                             return (
                                                 <option key={index} value={element.code}>
@@ -131,6 +131,15 @@ const ContactUsForm = () => {
                                                 </option>
                                             )
                                         } )
+                                    } */}
+                                    {
+                                        CountryCode.map((element, index) => {
+                                                return (
+                                                <option key={index} value={element.code} selected={element.country === 'India'}>
+                                                    {element.code} - {element.country}
+                                                </option>
+                                                );
+                                            })
                                     }
                                 </select>
                                 

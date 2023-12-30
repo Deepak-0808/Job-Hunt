@@ -8,10 +8,10 @@ const ContactForm = () => {
                          tablet:p-5 phone:p-3 ">
             <h1 className=" text-4xl leading-10 font-semibold
                              tablet:text-2xl phone:text-lg">
-                Got a Idea? We&apos;ve got the skills. Let&apos;s team up
+                Got an idea? We've got the skills. Let's team up!
             </h1>
             <p className=" tablet:text-lg phone:text-sm">
-                Tell us more about yourself and what you&apos;re got in mind.
+              Tell us more about yourself and what you've got in mind.
             </p>
 
             <div className="mt-7 tablet:mt-4 phone:mt-2">
