@@ -201,7 +201,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
                 Find Jobs, Build Futures: Your Journey to Better Opportunities and Success.
               </p>
               <Link to={"/Browse"}>
-                <button id="innerHeroSectionBtn">Browser Job</button>
+                <button id="innerHeroSectionBtn">Browse Job</button>
               </Link>
             </div>
           </div>
