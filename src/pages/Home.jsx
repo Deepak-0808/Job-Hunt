@@ -434,7 +434,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
                   Discover promising career paths with our efficient job search platform—quickly connect with opportunities and streamline your journey toward professional fulfillment.
                 </h4>
                 <Link to={"/Browse"}>
-                <button id="temp4Leftbtn" className="temp4btn">Browser Job</button>
+                <button id="temp4Leftbtn" className="temp4btn">Browse Job</button>
                 </Link>
                 
               </div>
