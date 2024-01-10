@@ -448,34 +448,9 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
                 </button>
               </div>
             </div>
-            {/* <img id="temp5img" src={templet5} alt="" /> */}
           </div>
         </section>
 
-        {/* section 5 testimonial */}
-
-        {/* <section>
-          <div id="testimonialMainContainer">
-            <div className="testimonialContainer testimonialLeftContainer">
-              <img id="img1" className="testImg" src={testimonial1} alt="1" />
-              <img id="img2" className="testImg" src={testimonial2} alt="2" />
-              <img id="img3" className="testImg" src={testimonial3} alt="3" />
-              <img id="img4" className="testImg" src={testimonial4} alt="4" />
-              <img id="img5" className="testImg" src={testimonial5} alt="5" />
-              <img id="img6" className="testImg" src={testimonial6} alt="6" />
-              <img id="img7" className="testImg" src={testimonial7} alt="7" />
-              <div id="testimonialMainImgContainer">
-                <img id="testimonialMainImg" src={mainimg} alt="" />
-              </div>
-            </div>
-            <div className="testimonialContainer testimonialRightContainer">
-              <h2>Testimonials</h2>
-              <p>
-                See what our clients have to say about their experience with our services. Read testimonials that reflect the success stories and satisfaction shared by those who have benefited from our expert guidance.
-              </p>
-            </div>
-          </div>
-        </section> */}
 
         {/* section 6 */}
         </div>
