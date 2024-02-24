@@ -1,13 +1,42 @@
 import { useState } from "react"
 import { Pie } from "react-chartjs-2"
 import { Chart, registerables } from "chart.js"
+import { fetchJobCategories } from "../../../../services/operations/jobDetailsAPI"
+import { useEffect } from "react"
 
 
 Chart.register(...registerables)
 
 export default function InstructorChart() {
-  // State to keep track of the currently selected chart
+  
+  const [loading, setLoading]=useState(false);
   const [currChart, setCurrChart] = useState("students")
+  const [categories, setCategories]= useState("")
+  const [categoryData, setCategoryData] = useState({});
+  
+
+
+  useEffect(() => {
+    const getCategories = async () => {
+      setLoading(true);
+      const categoriesResponse = await fetchJobCategories();
+      // console.log(categoriesResponse);
+  
+      // Create an object where keys are categoryName and values are objects
+      const categoryDataObject = {};
+      categoriesResponse.forEach((category) => {
+        categoryDataObject[category.name] = {
+          totalJob: category.jobs.length,
+        };
+      });
+  
+      setCategoryData(categoryDataObject);
+      setCategories(categoriesResponse);
+      setLoading(false);
+    };
+  
+    getCategories();
+  }, []);
 
   // Function to generate random colors for the chart
   const generateRandomColors = (numColors) => {
@@ -23,25 +52,26 @@ export default function InstructorChart() {
 
   // this is sample data 
   const courses = [
-    { courseName: 'Course 1', totalStudentsEnrolled: 100, totalAmountGenerated: 500 },
-    { courseName: 'Course 2', totalStudentsEnrolled: 150, totalAmountGenerated: 750 },
-    { courseName: 'Course 3', totalStudentsEnrolled: 120, totalAmountGenerated: 600 },
+    { categoriesName: 'categories 1', totalJob: 100, totalAmountGenerated: 500 },
+    { categoriesName: 'categories 2', totalJob: 150, totalAmountGenerated: 750 },
+    { categoriesName: 'categories 3', totalJob: 120, totalAmountGenerated: 600 },
     // Add more courses as needed
   ];
-  // Data for the chart displaying student information
+
+
   const chartDataStudents = {
-    labels: courses.map((course) => course.courseName),
+    labels: Object.keys(categoryData),
     datasets: [
       {
-        data: courses.map((course) => course.totalStudentsEnrolled),
-        backgroundColor: generateRandomColors(courses.length),
+        data: Object.values(categoryData).map((course) => course.totalJob),
+        backgroundColor: generateRandomColors(Object.keys(categoryData).length),
       },
     ],
-  }
+  };
 
   // Data for the chart displaying income information
   const chartIncomeData = {
-    labels: courses.map((course) => course.courseName),
+    labels: courses.map((course) => course.categoriesName),
     datasets: [
       {
         data: courses.map((course) => course.totalAmountGenerated),
@@ -62,16 +92,17 @@ export default function InstructorChart() {
         {/* Button to switch to the "students" chart */}
         <button
           onClick={() => setCurrChart("students")}
-          className={`rounded-sm p-1 px-3 transition-all duration-200 ${
+          className={`rounded-sm cursor-default p-1 px-3 transition-all duration-200 ${
             currChart === "students"
-              ? " bg-richwhite text-caribbeangreen-200"
-              : " text-blueMain"
+              ? " bg-richwhite text-blueMain"
+              : " text-black"
           }`}
         >
-          Students
+          Jobs
         </button>
         {/* Button to switch to the "income" chart */}
-        <button
+
+        {/* <button
           onClick={() => setCurrChart("income")}
           className={`rounded-sm p-1 px-3 transition-all duration-200 ${
             currChart === "income"
@@ -80,7 +111,7 @@ export default function InstructorChart() {
           }`}
         >
           Income
-        </button>
+        </button> */}
       </div>
       <div className="relative mx-auto aspect-square h-full w-full">
         {/* Render the Pie chart based on the selected chart */}

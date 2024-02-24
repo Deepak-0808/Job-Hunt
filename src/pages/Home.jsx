@@ -41,8 +41,8 @@ const Home = () => {
   const { token } = useSelector((state) => state.auth)
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
-  const[jobCategories,setJobCategories] = useState([])
-  const[companiesData,setCompaniesData] = useState([])
+  const[jobCategories,setJobCategories] = useState({})
+  const[companiesData,setCompaniesData] = useState({})
   const [keywords, setKeywords] = useState('');
   const [location, setLocation] = useState('');
   const [experience, setExperience] = useState('');
@@ -51,6 +51,7 @@ const Home = () => {
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [selectedJob, setSelectedJob]=useState(null);
   const [confirmationModal, setConfirmationModal] = useState(null)
+
 
 
 
@@ -81,10 +82,6 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
 
 
 // ****************
-
-
-
-
 
   const handleBookmarkClick = async(jobId) => {
     const data= {
@@ -129,28 +126,99 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
 
   useEffect(() => {
     const getCategories = async () => {
-      setLoading(true)
-      const categories = await fetchJobCategories()
-      setLoading(false)
-      if (categories.length > 0) {
-        // Set only the first four categories to display
-        setJobCategories(categories.slice(0, 4));
+
+      try {
+        setLoading(true)
+        const categories = await fetchJobCategories()
+        setLoading(false)
+        const categoryDataObject = {};
+
+        categories.forEach((category) => {
+          const categoryName = category.name;
+          const totalJobs = category.jobs.length;
+          const image = category.image;
+
+          categoryDataObject[categoryName] = {
+            categoryName: categoryName,
+            totalJobs: totalJobs,
+            image: image, 
+          };
+        });
+        
+        
+        if (Object.keys(categoryDataObject).length > 0) {
+          const categoriesToDisplay = Object.values(categoryDataObject).slice(0, 4);
+          setJobCategories(categoriesToDisplay);
+        }
+        
+      } catch (error) {
+
+        const localJobCategories = {
+          category1: {
+            image: 'Img/jobImage/1.jpeg',
+            categoryName: 'Finance and Accounting',
+            totalJobs: 10,
+          },
+          category2: {
+            image: 'Img/jobImage/c2.jpeg',
+            categoryName: 'Information Technology (IT)',
+            totalJobs: 5,
+          },
+          category3: {
+            image: 'Img/jobImage/c3.jpeg',
+            categoryName: 'Healthcare',
+            totalJobs: 5,
+          },
+          category4: {
+            image: 'Img/jobImage/c4.jpeg',
+            categoryName: 'Education',
+            totalJobs: 5,
+          },
+          // Add more local categories as needed
+        };
+        // console.log("Errorr")
+        if (Object.keys(localJobCategories).length > 0) {
+          const categoriesToDisplay = Object.values(localJobCategories).slice(0, 4);
+          setJobCategories(categoriesToDisplay);
+          // console.log(categoriesToDisplay);
+        }
       }
+      
     }
+    // console.log(jobCategories);
+
     const getCompaniesData = async () => {
       setLoading(true)
       const companyData = await fetchCompaniesData()
       setLoading(false)
-      if (companyData.length > 0) {
-        // Set only the first four company data to display
-        setCompaniesData(companyData.slice(0, 4));
+      const companyDataObject = {};
+
+      companyData.forEach((company) => {
+        const companyName = company.companyName;
+        const totalEmployees = company.totalEmployees;
+        const image = company.companyLogo;
+
+        companyDataObject[companyName] = {
+          companyName: companyName,
+          totalEmployees: totalEmployees,
+          image: image, 
+        };
+      });
+      
+      setLoading(false)
+      if (Object.keys(companyDataObject).length > 0) {
+        const companiesToDisplay = Object.values(companyDataObject).slice(0, 4);
+        setCompaniesData(companiesToDisplay);
       }
     }
+
     getCategories()
     getCompaniesData()
-
   }, [])
 
+  
+
+  // console.log(localJobCategories)
 
   const handleFilter = async () => {
 
@@ -163,7 +231,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
 
     try {
       setLoading(true)
-      const filteredJobData = await getAllJobs(queryParams);// Assuming getAllJobs is a function that fetches job data
+      const filteredJobData = await getAllJobs(queryParams);
       setLoading(false);
       setJobs(filteredJobData);  
     } catch (error) {
@@ -342,22 +410,32 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
             <div id="innerFeatureSection">
               <div id="leftContent">
                 <div>
-                  {jobCategories.slice(0, 2).map((category, index) => (
-                    <div className="contentBox box" key={index}>
-                      <img className="iconSize" src={category.image} alt="" />
-                      <h3 className="contentBoxHeading content1">{category.name}</h3>
-                      <p className="content1">50+ Available</p>
-                    </div>
-                  ))}
+                  {
+                  Object.keys(jobCategories).slice(0, 2).map((categoryKey, index) => {
+                    const category = jobCategories[categoryKey];
+                    return (
+                      <div className="contentBox box" key={index}>
+                        <img className="iconSize" src={category.image} alt="" />
+                        <h3 className="contentBoxHeading content1">{category.categoryName}</h3>
+                        <p className="content1">{category.totalJobs} Available</p>
+                      </div>
+                    );
+                  })
+                }
                 </div>
                 <div id="leftContentRightBox">
-                  {jobCategories.slice(2, 4).map((category, index) => (
-                    <div className="contentBox box" key={index}>
-                      <img className="iconSize" src={category.image} alt="" />
-                      <h3 className="contentBoxHeading content1">{category.name}</h3>
-                      <p className="content1">50+ Available</p>
-                    </div>
-                  ))}
+                  {
+                  Object.keys(jobCategories).slice(2, 4).map((categoryKey, index) => {
+                    const category = jobCategories[categoryKey];
+                    return (
+                      <div className="contentBox box" key={index}>
+                        <img className="iconSize" src={category.image} alt="" />
+                        <h3 className="contentBoxHeading content1">{category.categoryName}</h3>
+                        <p className="content1">{category.totalJobs} Available</p>
+                      </div>
+                    );
+                  })
+                  }
                 </div>
               </div>
               
@@ -399,22 +477,32 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
               <div id="rightConatCompanies">
                 <div id="innerRightContentCompanies">
                   <div id="innerLeftCompaniesCard" className="innerCompaniesCard">
-                    {companiesData.slice(0, 2).map((company, index) => (
-                    <div className="companiesContentBox companiesBox1 cB1 cb" key={index}>
-                      <img className="iconSize" src={company.companyLogo} alt="" />
-                      <h3 className="contentBoxHeading content1">{company.companyName}</h3>
-                      <p className="content1">50+ Available</p>
-                    </div>
-                    ))}
+                    {
+                    Object.keys(companiesData).slice(0, 2).map((companyKey, index) => {
+                      const company= companiesData[companyKey];
+                      return(
+                        <div className="companiesContentBox companiesBox1 cB1 cb" key={index}>
+                        <img className="iconSize" src={company.image} alt="" />
+                        <h3 className="contentBoxHeading content1">{company.companyName}</h3>
+                        <p className="content1">{company.totalEmployees} + Employees</p>
+                        </div>
+                      );
+                      })
+                    }
+
                   </div>
                   <div id="innerRightCompaniesCard" className="innerCompaniesCard">
-                    {companiesData.slice(2, 4).map((company, index) => (
+                    {Object.keys(companiesData).slice(2, 4).map((companyKey, index) => {
+                      const company= companiesData[companyKey];
+                    return(  
                     <div className="companiesContentBox companiesBox cB1" key={index}>
-                      <img className="iconSize" src={company.companyLogo} alt="" />
+                      <img className="iconSize" src={company.image} alt="" />
                       <h3 className="contentBoxHeading content1">{company.companyName}</h3>
-                      <p className="content1">50+ Available</p>
+                      <p className="content1">{company.totalEmployees} + Employees</p>
                     </div>
-                    ))}
+                    );
+                    })
+                    }
                   </div>
                 </div>
               </div>

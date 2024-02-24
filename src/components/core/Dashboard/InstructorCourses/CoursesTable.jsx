@@ -38,7 +38,7 @@ export default function CoursesTable({ jobs, setJobs }) {
   }
  
 
-  // console.log("Course logo ", courses)
+ 
 
   return (
     <>

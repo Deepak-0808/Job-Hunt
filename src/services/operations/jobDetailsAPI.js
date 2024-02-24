@@ -63,7 +63,7 @@ export const fetchJobDetails = async (jobId) => {
   return result
 }
 
-// fetching the available course categories
+// fetching the available job categories
 export const fetchJobCategories = async () => {
   let result = []
   try {

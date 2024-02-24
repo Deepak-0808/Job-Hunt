@@ -46,7 +46,6 @@ exports.showAllCategories = async (req, res) => {
         data: allCategorys,
       })
     } catch (error) {
-      console.log("error in category backend");
       return res.status(500).json({
         success: false,
         message: error.message,

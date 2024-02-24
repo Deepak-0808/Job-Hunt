@@ -146,10 +146,9 @@ exports.updateProfile = async (req, res) => {
           _id: job._id,
           jobTitle: job.jobTitle,
           description: job.description,
-          // Include other course properties as needed
+          // Include other jobs properties as needed
           totalStudentsApplied,
         }
-  
         return jobDataWithStats
       })
   

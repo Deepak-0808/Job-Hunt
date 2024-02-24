@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import { fetchAdminJobs } from "../../../services/operations/jobDetailsAPI"
 import { getAdminData } from "../../../services/operations/profileAPI"
 import InstructorChart from "./InstructorDashboard/InstructorChart"
+import { fetchJobCategories } from "../../../services/operations/jobDetailsAPI"
 
 export default function Instructor() {
   const { token } = useSelector((state) => state.auth)
@@ -12,19 +13,33 @@ export default function Instructor() {
   const [loading, setLoading] = useState(false)
   const [instructorData, setInstructorData] = useState(null)
   const [courses, setCourses] = useState([])
+  const [job, setJob]=useState([])
+  const [categories, setCategories]=useState([]);
+
 
   useEffect(() => {
     ;(async () => {
       setLoading(true)
       const instructorApiData = await getAdminData(token)
       const result = await fetchAdminJobs(token)
-      // console.log(instructorApiData)
+      // console.log(result)
       if (instructorApiData.length) setInstructorData(instructorApiData)
       if (result) {
         setCourses(result)
+        setJob(result);
       }
       setLoading(false)
     })()
+  },[])
+
+  useEffect(()=>{
+    const getCategories = async () => {
+      setLoading(true);
+      const categoriesResponse = await fetchJobCategories();
+      setCategories(categoriesResponse);
+      setLoading(false);
+    };
+    getCategories();
   },[])
 
 // i can uncomment this after connection from backend **********
@@ -38,8 +53,8 @@ export default function Instructor() {
   //   (acc, curr) => acc + curr.totalStudentsEnrolled,
   //   0
   // )
-  const totalAmount=1000;
-  const totalStudents=5;
+  const totalAmount=5000;
+  const totalStudents=10;
 
 
   return (
@@ -52,14 +67,14 @@ export default function Instructor() {
           Let's start something new
         </p>
       </div>
-      {loading ? (
+      { loading ? (
         <div className="spinner"></div>
-      ) : courses.length > 0 ? (
+      ) : job.length > 0 ? (
         <div>
           <div className="my-4 flex h-[450px] space-x-4">
             {/* Render chart / graph */}
             {totalAmount > 0 || totalStudents > 0 ? (
-              <InstructorChart courses={instructorData} />
+              <InstructorChart job={instructorData} />
             ) : (
               <div className="flex-1 rounded-md bg-richwhite border border-blueMain p-6">
                 <p className="text-lg font-bold text-black">Visualize</p>
@@ -73,23 +88,18 @@ export default function Instructor() {
               <p className="text-lg font-bold text-black">Statistics</p>
               <div className="mt-4 space-y-4">
                 <div>
+                  <p className="text-lg text-black">Total Categories</p>
+                  <p className="text-3xl font-semibold text-richblack-500">
+                    {categories.length}
+                  </p>
+                </div>
+                <div>
                   <p className="text-lg text-black">Total Jobs</p>
                   <p className="text-3xl font-semibold text-richblack-500">
-                    {courses.length}
+                    {job.length}
                   </p>
                 </div>
-                <div>
-                  <p className="text-lg text-black">Total Students</p>
-                  <p className="text-3xl font-semibold text-richblack-500">
-                    {totalStudents}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-lg text-black">Total Income</p>
-                  <p className="text-3xl font-semibold text-richblack-500">
-                    Rs. {totalAmount}
-                  </p>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -102,7 +112,7 @@ export default function Instructor() {
               </Link>
             </div>
             <div className="my-4 flex items-start space-x-6">
-              {courses.slice(0, 3).map((course) => (
+              {job.slice(0, 3).map((course) => (
                 <div key={course._id} className="w-1/3">
                     <img
                         src={course?.companyData?.companyLogo}
@@ -121,7 +131,7 @@ export default function Instructor() {
                         |
                       </p>
                       <p className="text-xs font-medium text-richblack-500">
-                        Rs. {course.salary}
+                        {course.salary}
                       </p>
                     </div>
                   </div>
@@ -133,11 +143,11 @@ export default function Instructor() {
       ) : (
         <div className="mt-20 rounded-md bg-richblack-800 p-6 py-20">
           <p className="text-center text-2xl font-bold text-richblack-5">
-            You have not created any courses yet
+            You have not posted any jobs yet
           </p>
           <Link to="/dashboard/add-course">
             <p className="mt-1 text-center text-lg font-semibold text-yellow-50">
-              Create a course
+              Post a job
             </p>
           </Link>
         </div>
