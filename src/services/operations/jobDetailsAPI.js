@@ -9,6 +9,7 @@ const {
     GET_ALL_JOB_API,
     JOB_DETAILS_API,
     EDIT_JOB_API,
+    JOB_CREATE_CATEGORIES_API,
     JOB_CATEGORIES_API,
     CREATE_JOB_API,
     CREATE_COMPANY_API,
@@ -60,6 +61,31 @@ export const fetchJobDetails = async (jobId) => {
   }
   toast.dismiss(toastId)
   //   dispatch(setLoading(false));
+  return result
+}
+
+// add new category
+export const addCategoryDetails = async (data, token) => {
+  let result = null
+  const toastId = toast.loading("Loading...")
+  console.log(data);
+  try {
+    
+    const response = await apiConnector("POST", JOB_CREATE_CATEGORIES_API, data, {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`,
+    })
+    // console.log("JOB_CREATE_CATEGORIES_API............", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Add Category Details")
+    }
+    toast.success("Category details added successfully")
+    result = response?.data?.data
+  } catch (error) {
+    console.log("JOB_CREATE_CATEGORIES_API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
   return result
 }
 

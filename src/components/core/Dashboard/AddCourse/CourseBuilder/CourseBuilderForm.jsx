@@ -22,7 +22,6 @@ export default function CourseBuilderForm() {
   const { job , editJob } = useSelector((state) => state.job)
   const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
-  // const [editCompanyData, setEditCompanyData] = useState(null)
 
   // *********
 

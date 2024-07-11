@@ -15,6 +15,7 @@ import VerifyEmail from './pages/VerifyEmail';
 import ForgotPassword from './pages/ForgotPassword';
 import ContactUs from './pages/ContactUs';
 import MyProfile from './components/core/Dashboard/MyProfile';
+import CreateCategories from './components/core/Dashboard/CreateCategories';
 import Dashboard from './pages/Dashboard'
 import PrivateRoute from './components/core/Auth/PrivateRoute';
 import Settings from "./components/core/Dashboard/Settings";
@@ -40,7 +41,6 @@ function App() {
       const token = JSON.parse(localStorage.getItem("token"))
       dispatch(getUserDetails(token, navigate))
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
 
@@ -77,6 +77,7 @@ function App() {
                   <Route path="dashboard/admin" element={<Instructor />} />
                   <Route path="dashboard/my-courses" element={<MyCourses />} />
                   <Route path="dashboard/add-course" element={<AddCourse/>} />
+                  <Route path="dashboard/create-category" element={<CreateCategories/>} />
                   <Route path="dashboard/edit-course/:jobId" element={<EditCourse />} />
                   </>
                 )

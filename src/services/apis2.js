@@ -37,6 +37,7 @@ export const jobEndpoints = {
 // CATAGORIES API
 export const categories = {
   CATEGORIES_API: BASE_URL + "/job/showAllCategories",
+  CREATE_CATEGORIES_API: BASE_URL + "/job/createCategory"
 }
 
 

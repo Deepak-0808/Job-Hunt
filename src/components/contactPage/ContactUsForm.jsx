@@ -25,7 +25,7 @@ const ContactUsForm = () => {
     } = useForm();
 
     const submitContactForm = async(data) => {
-        console.log("Logging Data" , data);
+        // console.log("Logging Data" , data);
         try{
             
             if (token) {
@@ -48,7 +48,7 @@ const ContactUsForm = () => {
             
         }
         catch(error) {
-            console.log("Error:" , error.message);
+            // console.log("Error:" , error.message);
             setLoading(false);
         }
     }

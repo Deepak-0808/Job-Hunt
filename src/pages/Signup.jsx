@@ -29,7 +29,6 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-  // const { firstName, lastName, email, password, confirmPassword } = formData
   const { fullName, email, password, confirmPassword } = formData
   // Handle input fields, when some value changes
   const handleOnChange = (e) => {
@@ -72,8 +71,6 @@ const Signup = () => {
     })
     setAccountType(ACCOUNT_TYPE.USER)
   }
-
-
 
     const [passwordStrength, setPasswordStrength] = useState("")
 
