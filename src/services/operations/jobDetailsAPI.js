@@ -82,7 +82,7 @@ export const addCategoryDetails = async (data, token) => {
     toast.success("Category details added successfully")
     result = response?.data?.data
   } catch (error) {
-    console.log("JOB_CREATE_CATEGORIES_API ERROR............", error)
+    // console.log("JOB_CREATE_CATEGORIES_API ERROR............", error)
     toast.error(error.message)
   }
   toast.dismiss(toastId)

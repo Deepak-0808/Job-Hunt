@@ -29,7 +29,6 @@ import EditCourse from "./components/core/Dashboard/EditCourse"
 import { getUserDetails } from "./services/operations/profileAPI"
 
 
-
 function App() {
 
   const dispatch = useDispatch()
