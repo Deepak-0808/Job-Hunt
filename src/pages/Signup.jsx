@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom"
 import { sendOtp } from "../services/operations/authAPI"
 import { setSignupData } from "../slices/authSlice"
 import { ACCOUNT_TYPE } from "../utils/constants"
+import { Helmet } from 'react-helmet';
 
 
 const Signup = () => {
@@ -96,6 +97,9 @@ const Signup = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>Sign Up</title>
+      </Helmet>
         <div id='signUpMainContainer'>
             <div id='leftContainer'>
                <img id='sideImage' src={sideImg}  alt="error" />

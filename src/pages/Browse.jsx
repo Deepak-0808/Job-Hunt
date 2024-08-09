@@ -15,6 +15,7 @@ import { useState,useEffect } from 'react';
 import { getAllJobs } from "../services/operations/jobDetailsAPI"
 import { addBookmark } from "../services/operations/contactUsAPI"
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 
 const Browse = () => {
@@ -162,6 +163,9 @@ const Browse = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>Browse Job</title>
+      </Helmet>
         {selectedCompany || selectedCompanyData? (
 
           <div>

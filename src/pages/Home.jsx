@@ -26,6 +26,7 @@ import ConfirmationModal from "../components/common/ConfirmationModal"
 import { useSelector } from 'react-redux'
 import { useNavigate} from "react-router-dom"
 import { useState,useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 import {
   fetchJobCategories,fetchCompaniesData,getAllJobs
@@ -242,6 +243,10 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
     
   return (
     <div>
+      <Helmet>
+        <title>Latest jobs, Private jobs, IT sector jobs</title>
+      </Helmet>
+
     <div>
       {selectedCompany ? (
         <CompanyDetails
@@ -262,9 +267,9 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
               <h3 id="jobListedH3" className="jobListed">
                 100+ Job Listed
               </h3>
-              <h2 id="dreamJob" className="jobListed">
+              <h1 id="dreamJob" className="jobListed">
                 Find Your Dream Job
-              </h2>
+              </h1>
               <p className="jobListed">
                 Find Jobs, Build Futures: Your Journey to Better Opportunities and Success.
               </p>
@@ -441,7 +446,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
               
               <div id="rightContent">
                 <div id="rightContentInnerBox">
-                  <h2>Popular Category</h2>
+                  <h1>Popular Category</h1>
                   <p>
                     Embark on a journey through our Popular Job Categories,
                     where a diverse array of opportunities awaits. From cutting-edge
@@ -464,7 +469,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
             <div id="innerCompaniesSection">
               <div id="leftContCompanies">
                 <div id="leftContCompaniesInnerBox">
-                  <h2>Top Companies</h2>
+                  <h1>Top Companies</h1>
                   <p>
                     Dive into our curated Top Companies section to access premier career
                     opportunities. These industry leaders offer a compelling blend of growth,
@@ -517,7 +522,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
             <img id="temp4img" src={templet4} alt="" />
             <div id="sec4ContentContainer">
               <div id="sec4LeftContainer">
-                <h2 className="sec4HeadMargin">Looking for a Job?</h2>
+                <h1 className="sec4HeadMargin">Looking for a Job?</h1>
                 <h4 className="sec4Margin">
                   Discover promising career paths with our efficient job search platform—quickly connect with opportunities and streamline your journey toward professional fulfillment.
                 </h4>
@@ -527,7 +532,7 @@ const jobsToShow = jobs.slice(startIndex, endIndex);
                 
               </div>
               <div id="sec4RightContainer">
-                <h2 className="sec4HeadMargin">Looking for a Experts</h2>
+                <h1 className="sec4HeadMargin">Looking for a Experts</h1>
                 <h4 className="sec4Margin">
                   We offer personalized one-on-one career guidance sessions conducted by our expert advisors through our online platform.
                 </h4>

@@ -4,11 +4,16 @@ import templet1 from "../Img/homepage/browseJobtTemplet1.png"
 import contactus from "../Img/svg/contactus.svg"
 import ContactForm from '../components/contactPage/ContactForm';
 import Footer from "./Footer"
+import { Helmet } from 'react-helmet';
 
 
 const ContactUs = () => {
   return (
     <div>
+      <Helmet>
+      <title>Cantact Us</title>
+      </Helmet>
+
         <section id="section1">
           <div id="heroSectionImg">
             <img className="temp1ContactUs" src={templet1} alt="loading" />

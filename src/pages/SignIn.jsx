@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { ACCOUNT_TYPE } from "../utils/constants"
 import Tab from "../components/common/Tab"
 import { login } from "../services/operations/authAPI";
+import { Helmet } from 'react-helmet';
 
 
 const SignIn = () => {
@@ -55,6 +56,9 @@ const SignIn = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>Sign In</title>
+      </Helmet>
         <div id='mainContainerSignIn'>
             <div id='leftContainerSignIn'>
                <img id='sideImage' src={sideImg}  alt="error" />

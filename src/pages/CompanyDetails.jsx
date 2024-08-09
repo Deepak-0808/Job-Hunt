@@ -5,10 +5,14 @@ import blackCircle from "../Img/icon/black-circle.png";
 import instagram from "../Img/icon/instagram.png";
 import "./CompanyDetails.css"
 import { SlArrowLeftCircle } from "react-icons/sl";
+import { Helmet } from 'react-helmet';
 
 const CompanyDetails = ({ companyData,jobData, onClose }) => {
   return (
     <div>
+        <Helmet>
+            <title>Company Details</title>
+        </Helmet>
         {/* herosection */}
        <section id="section1">
           <div id="heroSectionImg">
