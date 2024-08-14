@@ -5,19 +5,33 @@ import logo from "../Img/jobsmelaLogo/png/mainLogo.png"
 import { Link } from 'react-router-dom';
 import {subscribeUser} from "../services/operations/contactUsAPI"
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const FooterHomepage = () => {
 
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!email) {
+      toast.error('Please enter your email address.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error('Invalid email format');
+      return;
+    }
+
     try {
       setLoading(true);
       await subscribeUser(email)
       setLoading(false);
+      setError(null);
       return
     } catch (error) {
       console.log(error);
@@ -65,11 +79,14 @@ const FooterHomepage = () => {
                           type="email"
                           name="email"
                           id="subscribeEmail"
-                          placeholder="Email"   
-
+                          placeholder="Email"
                           value={email}
-                          onChange={(e) => setEmail(e.target.value)}
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                            setError(null); // Clear error message on change
+                          }}
                         />
+                        {error && <div className="error">{error}</div>}
                         <button onClick={handleSubmit}>Subscribe</button>
                       </div>
                     </div>
