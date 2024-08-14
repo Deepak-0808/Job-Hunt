@@ -4,10 +4,7 @@ import { contactusEndpoint } from "../apis2"
 
 
 
-const {
-  CONTACT_US_API,
-  BOOKMARK_API
-  } = contactusEndpoint
+const {CONTACT_US_API, BOOKMARK_API, SUBSCRIBE_USER_US_API} = contactusEndpoint
 
 
   // add the add user Idea details
@@ -61,4 +58,29 @@ export const addBookmark = async (data,token) => {
   }
   toast.dismiss(toastId)
   return result
+}
+
+
+// user subcribe api
+
+export const subscribeUser =async (email)=>{
+
+    const toastId = toast.loading("Loading...")
+    try {
+      const response = await apiConnector("POST",SUBSCRIBE_USER_US_API, {
+        email:email
+      })
+      // console.log("SUBSCRIBE_USER_US_API RESPONSE............", response)
+      if (!response?.data?.message) {
+        console.log("frontend res:",response);
+        throw new Error("Could Not Sbscribed")
+      }
+      toast.success("Subscribed!")
+    } catch (error) {
+      // console.log("SUBSCRIBE_USER_US_API ERROR............", error)
+      toast.error(error.response.data.message);
+    }
+    toast.dismiss(toastId)
+    return
+
 }

@@ -1,30 +1,29 @@
 import React from 'react'
 import './Footer.css';
 import footerTemplet from "../Img/homepage/footerTemplet.png";
-import {
-    fetchJobCategories
-  } from "../services/operations/jobDetailsAPI"
-import { useState } from 'react';  
-import { useEffect } from 'react';
 import logo from "../Img/jobsmelaLogo/png/mainLogo.png"
+import { Link } from 'react-router-dom';
+import {subscribeUser} from "../services/operations/contactUsAPI"
+import { useState } from 'react';
 
 const FooterHomepage = () => {
 
-    const[jobCategories,setJobCategories] = useState([]);
-    const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const getCategories = async () => {
-          setLoading(true)
-          const categories = await fetchJobCategories()
-          setLoading(false)
-          if (categories.length > 0) {
-            setJobCategories(categories.slice(0, 4));
-          }
-        }
-    getCategories()
-    
-    }, [])    
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      await subscribeUser(email)
+      setLoading(false);
+      return
+    } catch (error) {
+      console.log(error);
+      // Handle error, e.g., show an error message
+    }
+  };
 
   return (
     <div>
@@ -45,24 +44,34 @@ const FooterHomepage = () => {
                         <p className="footerPara">Bihar, India</p>
                     </div>
                     <div>
-                        <h3 className="footerHeading">Category</h3>
-                        {jobCategories.slice(0, 4).map((category, index) => (
-                            <div key={index}>
-                                <p className="footerPara">{category.name}</p>
-                            </div>
-                        ))}
+                        <h3 className="footerHeading">Menu</h3>
+                        <Link to={"/"}>
+                          <p className="footerPara">Home</p>
+                        </Link>
+                        <Link to={"/Browse"}>
+                          <p className="footerPara">Browse Job</p>
+                        </Link>
+                        <Link to={"/contactus"}>
+                          <p className="footerPara">Contact Us</p>
+                        </Link>
+                        <Link to={"/PrivacyPolicy"}>
+                          <p className="footerPara">Our Privacy Policy</p>
+                        </Link>
                     </div>
                     <div id="footerEmailMainContainer">
-                        <h3 className="footerHeading">Subscribe</h3>
-                        <div id="footerSubsEmailContainer">
-                            <input
-                                type="email"
-                                name="email"
-                                id="subscribeEmail"
-                                placeholder="Email"
-                            />
-                            <button>Subscribe</button>
-                        </div>
+                      <h3 className="footerHeading">Subscribe</h3>
+                      <div id="footerSubsEmailContainer">
+                        <input
+                          type="email"
+                          name="email"
+                          id="subscribeEmail"
+                          placeholder="Email"   
+
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button onClick={handleSubmit}>Subscribe</button>
+                      </div>
                     </div>
                 </div>
             </div>

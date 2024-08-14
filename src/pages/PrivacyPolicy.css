@@ -1,0 +1,89 @@
+/* Container styling */
+.mainContainer{
+    width: 100vw;
+    height: auto;
+    background-color: #e6e6f9;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+.privacy-policy-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+    /* max-width: 90%; */
+    
+    
+}
+
+/* Header styling */
+h1.header {
+    font-size: 3em;
+    color: #333;
+}
+
+h2, h3, h4 {
+    /* color: #333; */
+}
+
+h2.subheader {
+    font-size: 1.5em;
+    margin-top: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+h3.subheader {
+    font-size: 1.25em;
+    margin-top: 15px;
+}
+
+h4.subsection {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Paragraph styling */
+p.definition {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* List styling */
+ul.cookie-list, ul.data-use-list, ul.data-share-list, ul.legal-requirements-list, .contact-list {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul.cookie-list li, ul.data-use-list li, ul.data-share-list li, ul.legal-requirements-list li {
+    margin-bottom: 10px;
+}
+
+ul.cookie-list li strong, ul.data-use-list li strong, ul.data-share-list li strong, ul.legal-requirements-list li strong {
+    color: #000;
+}
+
+/* Link styling */
+/* a {
+    color: #0066cc;
+    text-decoration: none;
+} */
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .privacy-policy-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2.subheader, h3.subheader, h4.subsection {
+        font-size: 1.2em;
+    }
+}

@@ -19,6 +19,7 @@ import CreateCategories from './components/core/Dashboard/CreateCategories';
 import Dashboard from './pages/Dashboard'
 import PrivateRoute from './components/core/Auth/PrivateRoute';
 import Settings from "./components/core/Dashboard/Settings";
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { ACCOUNT_TYPE } from "./utils/constants";
@@ -56,6 +57,7 @@ function App() {
           <Route path="/signin" element={<OpenRoute><SignIn/></OpenRoute>} />
           <Route path="/login" element={<OpenRoute><SignIn/></OpenRoute>} />
           <Route path="/signup" element={ <OpenRoute><SignUp/></OpenRoute> } />
+          <Route path="/PrivacyPolicy" element={ <OpenRoute><PrivacyPolicy/></OpenRoute> } />
           <Route path="/forgot" element={<OpenRoute><ForgotPassword/></OpenRoute>} />
           <Route path="/update-password/:id" element={<OpenRoute><UpdatePassword/></OpenRoute>} />
           <Route path="/verify-email" element={<OpenRoute><VerifyEmail/></OpenRoute>} />

@@ -12,8 +12,6 @@ export const endpoints = {
 // PROFILE ENDPOINTS
 export const profileEndpoints = {
   GET_USER_DETAILS_API: BASE_URL + "/profile/getUserDetails",
-  // GET_USER_ENROLLED_COURSES_API: BASE_URL + "/profile/getEnrolledCourses",
-  // GET_INSTRUCTOR_DATA_API: BASE_URL + "/profile/instructorDashboard",
   GET_ADMIN_DATA_API: BASE_URL + "/profile/adminDashboard",
 }
 
@@ -45,7 +43,8 @@ export const categories = {
 // CONTACT-US API
 export const contactusEndpoint = {
   CONTACT_US_API: BASE_URL + "/reach/contact",
-  BOOKMARK_API: BASE_URL + "/save/bookmark"
+  BOOKMARK_API: BASE_URL + "/save/bookmark",
+  SUBSCRIBE_USER_US_API: BASE_URL + "/user/subscribe" 
 }
 
 // SETTINGS PAGE API

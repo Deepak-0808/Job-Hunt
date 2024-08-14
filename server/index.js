@@ -6,6 +6,7 @@ const profileRoutes = require("./routes/JobProfile");
 const jobRoutes = require("./routes/Job");
 const contactUsRoute= require("./routes/Contact")
 
+
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 
@@ -25,8 +26,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin:"https://www.jobsmela.online",
-        // origin:"http://localhost:3000",
+        // origin:"https://www.jobsmela.online",
+        origin:"http://localhost:3000",
         Credential:true,
 
     })
@@ -48,6 +49,7 @@ app.use("/api/v1/profile",profileRoutes);
 app.use("/api/v1/job",jobRoutes);
 app.use("/api/v1/reach",contactUsRoute);
 app.use("/api/v1/save",contactUsRoute);
+app.use("/api/v1/user",contactUsRoute);
 
 //deffault route
 app.get("/",(req,res)=>{

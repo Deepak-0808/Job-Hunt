@@ -2,6 +2,7 @@ const { contactUsEmail } = require("../mail/templates/contactFormRes")
 const mailSender = require("../utils/mailSender")
 const Contact = require("../models/Contact");
 const User = require("../models/User");
+const Subscribe = require("../models/Subscribe");
 
 exports.contactUsController = async (req, res) => {
   // console.log(req.body)
@@ -99,6 +100,48 @@ exports.bookMarkController = async (req, res) => {
       success: false,
       error: error,
       message: error.message,
+    })
+  }
+}
+
+// subscribe user
+
+exports.subscribeController = async (req, res) => {
+  // console.log(req.body)
+  const { email} = req.body
+  
+  
+  try {
+
+    // Check if user already exists
+		const existingEmail = await Subscribe.findOne({email});
+
+		if (existingEmail) {
+			return res.status(400).json({
+				success: false,
+				message: "You have already subscribed!",
+			});
+		}
+    const user = await Subscribe.create({
+      email
+    });
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "Email not added",
+      })
+    }
+
+    return res.json({
+      success: true,
+      message: "Subscribed successfully",
+    })
+  } catch (error) {
+    // console.log("Error message :", error.message)
+    return res.json({
+      success: false,
+      message: "Something went wrong...",
     })
   }
 }
