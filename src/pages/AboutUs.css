@@ -1,0 +1,52 @@
+.about-us {
+    width: 100vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin: 0 auto;
+    padding: 40px;
+    /* text-align: center; */
+    background-color: #e6e6f9; 
+  }
+
+  .about-us h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: black; /* Dark text color */
+  }
+
+  .about-us h3{
+    font-size: 25px;
+    
+  }
+  
+  .about-us p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  .about-us ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    text-align: left; /* Align list items to the left */
+  }
+  
+  .about-us li {
+    margin-bottom: 10px;
+  }
+  
+  /* Add more CSS classes for specific elements */
+  .about-us .testimonials {
+    text-align: left;
+    margin-top: 40px;
+  }
+  
+  .about-us .testimonial {
+    border-left: 2px solid #ccc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  

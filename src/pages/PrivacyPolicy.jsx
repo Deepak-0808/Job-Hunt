@@ -1,8 +1,12 @@
 import React from 'react'
 import "./PrivacyPolicy.css"
+import "./Footer"
+import Footer from './Footer';
 
 function PrivacyPolicy() {
-    return (<div className='mainContainer'>
+    return (<div>
+    
+    <div className='mainContainer'>
 
     <div className='privacy-policy-container'>
     <h1 class="header">Privacy Policy</h1>
@@ -37,21 +41,6 @@ function PrivacyPolicy() {
     </ul>
     <p class="definition">If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your name, Your email address, Your activities or Your contact list associated with that account.</p>
     <p class="definition">You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.</p>
-    <h4 class="subsection">Tracking Technologies and Cookies</h4>
-    <p class="definition">We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
-    <ul class="tracking-tech-list">
-        <li><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
-        <li><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
-    </ul>
-    <p class="definition">Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies on the <a class="link" href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking" target="_blank">Free Privacy Policy website</a> article.</p>
-    <p class="definition">We use both Session and Persistent Cookies for the purposes set out below:</p>
-    <ul class="cookie-list">
-        <li><strong>Necessary / Essential Cookies</strong><br/>Type: Session Cookies<br/>Administered by: Us<br/>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</li>
-        <li><strong>Cookies Policy / Notice Acceptance Cookies</strong><br/>Type: Persistent Cookies<br/>Administered by: Us<br/>Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</li>
-        <li><strong>Functionality Cookies</strong><br/>Type: Persistent Cookies<br/>Administered by: Us<br/>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</li>
-    </ul>
-        
-    <p class="definition">For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
 
     <h3 class="subheader">Use of Your Personal Data</h3>
     <p class="definition">The Company may use Personal Data for the following purposes:</p>
@@ -128,6 +117,10 @@ function PrivacyPolicy() {
     </ul>
     </div>
 
+    
+
+    </div>
+    <Footer/>
 </div>
 )}
 

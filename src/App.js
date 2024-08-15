@@ -14,6 +14,7 @@ import UpdatePassword from './pages/UpdatePassword';
 import VerifyEmail from './pages/VerifyEmail';
 import ForgotPassword from './pages/ForgotPassword';
 import ContactUs from './pages/ContactUs';
+import AboutUs from './pages/AboutUs';
 import MyProfile from './components/core/Dashboard/MyProfile';
 import CreateCategories from './components/core/Dashboard/CreateCategories';
 import Dashboard from './pages/Dashboard'
@@ -58,6 +59,7 @@ function App() {
           <Route path="/login" element={<OpenRoute><SignIn/></OpenRoute>} />
           <Route path="/signup" element={ <OpenRoute><SignUp/></OpenRoute> } />
           <Route path="/PrivacyPolicy" element={ <OpenRoute><PrivacyPolicy/></OpenRoute> } />
+          <Route path="/aboutUs" element={ <OpenRoute><AboutUs/></OpenRoute> } />
           <Route path="/forgot" element={<OpenRoute><ForgotPassword/></OpenRoute>} />
           <Route path="/update-password/:id" element={<OpenRoute><UpdatePassword/></OpenRoute>} />
           <Route path="/verify-email" element={<OpenRoute><VerifyEmail/></OpenRoute>} />

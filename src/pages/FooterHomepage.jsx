@@ -68,8 +68,11 @@ const FooterHomepage = () => {
                         <Link to={"/contactus"}>
                           <p className="footerPara">Contact Us</p>
                         </Link>
+                        <Link to={"/aboutUs"}>
+                          <p className="footerPara">About Us</p>
+                        </Link>
                         <Link to={"/PrivacyPolicy"}>
-                          <p className="footerPara">Our Privacy Policy</p>
+                          <p className="footerPara">Privacy Policy</p>
                         </Link>
                     </div>
                     <div id="footerEmailMainContainer">
