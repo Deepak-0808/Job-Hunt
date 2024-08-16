@@ -1,96 +1,140 @@
 /* Container styling */
-.mainContainer{
+.mainContainer {
     width: 100vw;
     height: auto;
     background-color: #e6e6f9;
-    padding-left: 3vw;
-    padding-right: 3vw;
-}
-.mainContainer ul{
-    font-size: 18px;
-}
-.privacy-policy-container {
+    padding: 3vw; /* Adjust padding based on screen size */
+  }
+  
+  .mainContainer ul {
+    font-size: calc(1em + 0.2vw); /* Adjust font size based on screen size */
+  }
+  
+  .privacy-policy-container {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0 auto;
-    padding: 17px; 
-}
-.privacy-policy-container p{
-    font-size: 18px;
-}
-
-/* Header styling */
-h1.header {
-    font-size: 40px;
-}
-
-h2, h3, h4 {
+    padding: 17px;
+  }
+  
+  .privacy-policy-container p {
+    font-size: calc(1em + 0.2vw); /* Adjust font size based on screen size */
+  }
+  
+  /* Header styling */
+  h1.header {
+    font-size: clamp(2.5em, 40px, 5em); /* Adjust font size based on screen size */
+  }
+  
+  h2,
+  h3,
+  h4 {
     /* color: #333; */
-}
-
-h2.subheader {
+  }
+  
+  h2.subheader {
     font-size: 1.8em;
     margin-top: 20px;
     border-bottom: 2px solid black;
     padding-bottom: 5px;
-}
-
-h3.subheader {
-    font-size: 1.5em;
+  }
+  
+  h3.subheader {
+    font-size: clamp(1.2em, 1.5em, 1.8em); /* Adjust font size based on screen size */
     margin-top: 15px;
-}
-
-h3.subsection {
-    font-size: 1.3em;
+  }
+  
+  h3.subsection {
+    font-size: clamp(1em, 1.3em, 1.5em); /* Adjust font size based on screen size */
     margin-top: 10px;
-}
-
-h4.subsection {
-    font-size: 1.3em;
+  }
+  
+  h4.subsection {
+    font-size: clamp(1em, 1.3em, 1.5em); /* Adjust font size based on screen size */
     margin-top: 10px;
-}
-
-/* Paragraph styling */
-p.definition {
+  }
+  
+  /* Paragraph styling */
+  p.definition {
     margin-bottom: 15px;
     color: black;
-}
-
-/* List styling */
-ul.cookie-list, ul.data-use-list, ul.data-share-list, ul.legal-requirements-list, .contact-list {
+  }
+  
+  /* List styling */
+  ul.cookie-list,
+  ul.data-use-list,
+  ul.data-share-list,
+  ul.legal-requirements-list,
+  .contact-list {
     margin: 10px 0;
     padding-left: 20px;
-}
-
-ul.cookie-list li, ul.data-use-list li, ul.data-share-list li, ul.legal-requirements-list li {
+  }
+  
+  ul.cookie-list li,
+  ul.data-use-list li,
+  ul.data-share-list li,
+  ul.legal-requirements-list li {
     margin-bottom: 10px;
-}
-
-ul.cookie-list li strong, ul.data-use-list li strong, ul.data-share-list li strong, ul.legal-requirements-list li strong {
+  }
+  
+  ul.cookie-list li strong,
+  ul.data-use-list li strong,
+  ul.data-share-list li strong,
+  ul.legal-requirements-list li strong {
     color: black;
-}
-
-/* Link styling */
-/* a {
-    color: #0066cc;
-    text-decoration: none;
-} */
-
-a:hover {
+  }
+  
+  /* Link styling */
+  /* a {
+      color: #0066cc;
+      text-decoration: none;
+  } */
+  
+  a:hover {
     text-decoration: underline;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .privacy-policy-container {
-        padding: 10px;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .mainContainer {
+      padding: 2vw;
     }
-
-    h1 {
-        font-size: 1.5em;
+  
+    .privacy-policy-container p,
+    .mainContainer ul {
+      font-size: 16px;
     }
-
-    h2.subheader, h3.subheader, h4.subsection {
-        font-size: 1.2em;
+  
+    h1.header {
+      font-size: clamp(2em, 35px, 4.5em);
     }
-}
+  
+    h2.subheader,
+    h3.subheader,
+    h3.subsection,
+    h4.subsection {
+      font-size: 1.2em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mainContainer {
+      padding: 1vw;
+    }
+  
+    .privacy-policy-container p,
+    .mainContainer ul {
+      font-size: 14px;
+    }
+  
+    h1.header {
+      font-size: clamp(1.5em, 30px, 4em);
+    }
+  
+    h2.subheader,
+    h3.subheader,
+    h3.subsection,
+    h4.subsection {
+      font-size: 1em;
+    }
+  }

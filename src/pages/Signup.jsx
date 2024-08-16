@@ -151,10 +151,10 @@ const Signup = () => {
                         </div>
                        
                         
-                        <div id='policySignup'>
+                        {/* <div id='policySignup'>
                             <input type="checkbox" name="policy" id="checkboxSignup"/>
                             <div>I agree the private policy</div>
-                        </div>
+                        </div> */}
                         <button id='signupBtn' type="submit">Sign Up</button>
                     </form>
                         <div id='innerfooterSignup'>

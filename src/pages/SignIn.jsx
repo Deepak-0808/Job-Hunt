@@ -84,10 +84,10 @@ const SignIn = () => {
                         </label>
 
                         <div id='checkAndForgotContainer'>
-                            <div id='checkboxRemember'>
+                            {/* <div id='checkboxRemember'>
                                 <input type="checkbox" name="remember" id="SignInCheckbox"/>
                                 <div>Remember me</div>
-                            </div>
+                            </div> */}
                             <Link to="/forgot" className="signinLinkDecoration">
                                 <div id='forgotbtn' className='blueClass'>Forgot Password</div>
                             </Link>

@@ -1,52 +1,84 @@
 .about-us {
-    width: 100vw;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    margin: 0 auto;
-    padding: 40px;
-    /* text-align: center; */
-    background-color: #e6e6f9; 
+  width: 100vw;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #e6e6f9;
+}
+
+.about-us h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: black;
+}
+
+.about-us h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.about-us p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.about-us ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.about-us li {
+  margin-bottom: 5px;
+}
+
+.about-us .testimonials {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.about-us .testimonial {
+  border-left: 2px solid #ccc;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-us {
+      padding: 15px;
   }
 
   .about-us h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: black; /* Dark text color */
+      font-size: 24px;
   }
 
-  .about-us h3{
-    font-size: 25px;
-    
+  .about-us h3 {
+      font-size: 18px;
   }
-  
-  .about-us p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 20px;
+
+  .about-us p, .about-us ul, .about-us li {
+      font-size: 14px;
   }
-  
-  .about-us ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 20px;
-    text-align: left; /* Align list items to the left */
+}
+
+@media (max-width: 480px) {
+  .about-us {
+      padding: 10px;
   }
-  
-  .about-us li {
-    margin-bottom: 10px;
+
+  .about-us h2 {
+      font-size: 20px;
   }
-  
-  /* Add more CSS classes for specific elements */
-  .about-us .testimonials {
-    text-align: left;
-    margin-top: 40px;
+
+  .about-us h3 {
+      font-size: 16px;
   }
-  
-  .about-us .testimonial {
-    border-left: 2px solid #ccc;
-    padding-left: 20px;
-    margin-bottom: 20px;
+
+  .about-us p, .about-us ul, .about-us li {
+      font-size: 12px;
   }
-  
+}
