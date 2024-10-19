@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Jobs Search Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+Jobs Search Portal is a responsive multi-page application designed for job seekers and employers. It features secure user authentication, role-based access control (RBAC), job filters, and real-time notifications to enhance user engagement.
 
-## Available Scripts
+## Live Demo
+You can view the live application at: [Jobs Search Portal](https://www.jobsmela.online/)
 
-In the project directory, you can run:
+## Technologies Used
+- **Frontend:** React.js, TailwindCSS
+- **Backend:** Node.js, Express
+- **Database:** MongoDB
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
+Make sure you have the following installed on your machine:
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
+- MongoDB (or use a cloud-based solution like MongoDB Atlas)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Clone the Repository
+First, clone the repository from GitHub:
 
-### `npm test`
+```bash
+git clone https://github.com/Deepak-0808/Job-Hunt.git
+cd Job-Hunt
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Install Dependencies
+Navigate to both the `server` and `src` directories to install the required packages:
 
-### `npm run build`
+1. **Backend (Server)**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+cd server
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Frontend (Client)**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd ../src
+npm install
+```
 
-### `npm run eject`
+### Environment Variables
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Backend
+Create a `.env` file in the `server` directory and add your environment variables as follows:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+MAIL_HOST=
+MAIL_USER=
+MAIL_PASS=
+JWT_SECRET=
+FOLDER_NAME=
+RAZORPAY_KEY=
+RAZORPAY_SECRET=
+CLOUD_NAME=
+API_KEY=
+API_SECRET=
+MONGODB_URL=
+PORT=4000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Frontend
+Create a `.env` file in the `src` directory and add the following environment variable:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+REACT_APP_BASE_URL=http://localhost:4000/api/v1
+```
 
-## Learn More
+### Run the Application
+Start both the backend and frontend applications with the following command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Access the Application
+Once the application is running, you can access it at `http://localhost:3000`.
 
-### Code Splitting
+## Features
+- **User Authentication:** Secure login and registration for job seekers and employers.
+- **Role-Based Access Control (RBAC):** Different access levels for job seekers and employers.
+- **Job Filters:** Easily filter jobs based on various criteria.
+- **Real-Time Notifications:** Get notified about job updates and application status.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Proprietary License
 
-### Analyzing the Bundle Size
+This software is proprietary and confidential. You may not reproduce, distribute, or modify this code without explicit written permission from the author.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For inquiries, please contact "i.deepak0808@gmail.com".
